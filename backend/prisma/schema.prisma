@@ -1,0 +1,129 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id              Int             @id @default(autoincrement())
+    created_at      DateTime        @default(now())
+    updated_at      DateTime        @updatedAt
+    name            String
+    lastname        String
+    user_id         String          @unique
+    username        String          @unique
+    password        String
+    email           String
+    admin           Boolean
+    restaurant      Restaurant?     @relation(fields: [restaurant_id], references: [id])
+    restaurant_id   Int?
+}
+
+model Restaurant {
+    id              Int         @id @default(autoincrement())
+    created_at      DateTime    @default(now())
+    updated_at      DateTime    @updatedAt
+    name            String      @unique
+    location        String      
+    description     String
+    timetable       String
+    users           User[]
+    dishes          Dish[]
+}
+
+model Dish {
+    id              Int             @id @default(autoincrement())
+    created_at      DateTime        @default(now())
+    updated_at      DateTime        @updatedAt
+    name            String
+    description     String
+    alergies        String?
+    calories        Int
+    carbohydrates   Decimal
+    sugars          Decimal
+    fiber           Decimal
+    fats            Decimal
+    saturated_fats  Decimal?
+    trans_fats      Decimal?
+    cholesterol     Decimal?
+    proteins        Decimal
+    sodium          Decimal?
+    iron            Decimal?
+    calcium         Decimal?
+    magnesium       Decimal?
+    potasium        Decimal?
+    phosphorus      Decimal?
+    zinc            Decimal?
+    vitamin_a       Decimal?
+    vitamin_b       Decimal?
+    vitamin_c       Decimal?
+    vitamin_d       Decimal?
+    vitamin_e       Decimal?
+    vitamin_k       Decimal?
+    restaurant      Restaurant          @relation(fields: [restaurant_id], references: [id], onDelete: Cascade)
+    restaurant_id   Int
+    tags            DishFoodTypeTag[]
+    dates           Timetable[]
+}
+
+model Timetable {
+    id              Int         @id @default(autoincrement())
+    created_at      DateTime    @default(now())
+    updated_at      DateTime    @updatedAt
+    dish_id         Int
+    dish            Dish        @relation(fields: [dish_id], references: [id])
+    date_id         Int
+    date            Date        @relation(fields: [date_id], references: [id])
+}
+
+model Date {
+    id              Int             @id @default(autoincrement())
+    created_at      DateTime        @default(now())
+    updated_at      DateTime        @updatedAt
+    day             Int
+    month           Int
+    year            Int
+    workable        Boolean         @default(true)
+    vegetarian      Boolean         @default(false)
+    dishes          Timetable[]
+    reservations    Reservation[]
+    @@unique([day, month, year])
+}
+
+model Reservation {
+    id              Int         @id @default(autoincrement())
+    created_at      DateTime    @default(now())
+    updated_at      DateTime    @updatedAt
+    date            Date        @relation(fields: [date_id], references: [id])
+    date_id         Int
+    fullname        String
+    email           String
+    phone           String
+    amount_people   Int
+    hour            Int
+    minute          Int
+}
+
+model DishFoodTypeTag {
+    id              Int                 @id @default(autoincrement())
+    created_at      DateTime            @default(now())
+    updated_at      DateTime            @updatedAt
+    dish_id         Int                 
+    dish            Dish                @relation(fields: [dish_id], references: [id])
+    tag_id          Int
+    tag             FoodTypeTag         @relation(fields: [tag_id], references: [id])
+}
+
+model FoodTypeTag {
+    id              Int                 @id @default(autoincrement())
+    created_at      DateTime            @default(now())
+    updated_at      DateTime            @updatedAt
+    name            String
+    dishes          DishFoodTypeTag[]
+}
