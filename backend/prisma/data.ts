@@ -68,7 +68,7 @@ export default {
                 "iron": 5, // mg
                 "calcium": 2, // mg
                 "magnesium": 3, // mg
-                "potassium": 49, // mg
+                "potasium": 49, // mg
                 "phosphorus": 12, // mg
                 "zinc": 0.04, // mg
                 "vitamin_a": 0, // mg
@@ -95,7 +95,7 @@ export default {
                 "iron": 0.001, // mg
                 "calcium": 90, // mg
                 "magnesium": 8, // mg
-                "potassium": 160, // mg
+                "potasium": 160, // mg
                 "phosphorus": 50, // mg
                 "zinc": 0.1, // mg
                 "vitamin_a": 2, // mg
@@ -122,7 +122,7 @@ export default {
                 "iron": 0.1, // mg
                 "calcium": 50, // mg
                 "magnesium": 5, // mg
-                "potassium": 20, // mg
+                "potasium": 20, // mg
                 "phosphorus": 10, // mg
                 "zinc": 0, // mg
                 "vitamin_a": 0, // mg
@@ -136,6 +136,7 @@ export default {
                 "name": "Croissant de Almendra",
                 "description": "Delicioso croissant relleno de almendras y glaseado con azúcar.",
                 "price": 3.75, // USD
+                "alergies": "Frutos secos",
                 "calories": 320, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 15, // g
@@ -149,7 +150,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 40, // mg
                 "magnesium": 20, // mg
-                "potassium": 80, // mg
+                "potasium": 80, // mg
                 "phosphorus": 40, // mg
                 "zinc": 0.5, // mg
                 "vitamin_a": 0.03, // mg
@@ -176,7 +177,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 50, // mg
                 "magnesium": 20, // mg
-                "potassium": 150, // mg
+                "potasium": 150, // mg
                 "phosphorus": 40, // mg
                 "zinc": 0.5, // mg
                 "vitamin_a": 0.45, // mg
@@ -203,7 +204,7 @@ export default {
                 "iron": 2, // mg
                 "calcium": 100, // mg
                 "magnesium": 30, // mg
-                "potassium": 400, // mg
+                "potasium": 400, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.24, // mg
@@ -217,6 +218,7 @@ export default {
                 "name": "Tarta de Manzana Casera",
                 "description": "Una deliciosa tarta de manzana con crujiente cobertura.",
                 "price": 4.50, // USD
+                "alergies": "Gluten",
                 "calories": 250, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 15, // g
@@ -230,7 +232,7 @@ export default {
                 "iron": 0.5, // mg
                 "calcium": 20, // mg
                 "magnesium": 10, // mg
-                "potassium": 80, // mg
+                "potasium": 80, // mg
                 "phosphorus": 40, // mg
                 "zinc": 0.2, // mg
                 "vitamin_a": 0.02, // mg
@@ -257,7 +259,7 @@ export default {
                 "iron": 0.2, // mg
                 "calcium": 10, // mg
                 "magnesium": 15, // mg
-                "potassium": 100, // mg
+                "potasium": 100, // mg
                 "phosphorus": 20, // mg
                 "zinc": 0.1, // mg
                 "vitamin_a": 0.03, // mg
@@ -286,7 +288,7 @@ export default {
                 "iron": 1.2, // mg
                 "calcium": 40, // mg
                 "magnesium": 20, // mg
-                "potassium": 300, // mg
+                "potasium": 300, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.15, // mg
@@ -313,7 +315,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 80, // mg
                 "magnesium": 30, // mg
-                "potassium": 250, // mg
+                "potasium": 250, // mg
                 "phosphorus": 100, // mg
                 "zinc": 0.8, // mg
                 "vitamin_a": 0.09, // mg
@@ -340,7 +342,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 40, // mg
                 "magnesium": 50, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 100, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.03, // mg
@@ -367,7 +369,7 @@ export default {
                 "iron": 0.8, // mg
                 "calcium": 80, // mg
                 "magnesium": 30, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 60, // mg
                 "zinc": 0.5, // mg
                 "vitamin_a": 0.15, // mg
@@ -394,7 +396,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 60, // mg
                 "magnesium": 20, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.15, // mg
@@ -408,6 +410,7 @@ export default {
                 "name": "Bowl de Acai con Granola y Frutas",
                 "description": "Acai bowl con granola, plátano, fresas y coco rallado.",
                 "price": 9.50, // USD
+                "alergies": "Frutos secos",
                 "calories": 200, // kcal
                 "carbohydrates": 35, // g
                 "sugars": 15, // g
@@ -421,7 +424,7 @@ export default {
                 "iron": 2, // mg
                 "calcium": 30, // mg
                 "magnesium": 40, // mg
-                "potassium": 150, // mg
+                "potasium": 150, // mg
                 "phosphorus": 50, // mg
                 "zinc": 0.5, // mg
                 "vitamin_a": 0.3, // mg
@@ -437,6 +440,7 @@ export default {
                 "name": "Pizza Margarita",
                 "description": "Tradicional pizza con salsa de tomate, mozzarella fresca y albahaca.",
                 "price": 10.00, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 250, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 2, // g
@@ -450,7 +454,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 150, // mg
                 "magnesium": 20, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.24, // mg
@@ -464,6 +468,7 @@ export default {
                 "name": "Pizza Pepperoni y Champiñones",
                 "description": "Deliciosa pizza con salsa de tomate, pepperoni, champiñones y queso fundido.",
                 "price": 12.00, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 300, // kcal
                 "carbohydrates": 35, // g
                 "sugars": 3, // g
@@ -477,7 +482,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 200, // mg
                 "magnesium": 25, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.3, // mg
@@ -491,6 +496,7 @@ export default {
                 "name": "Calzone de Pollo y Queso Ricotta",
                 "description": "Calzone relleno de pollo, queso ricotta, espinacas y salsa de tomate.",
                 "price": 14.50, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 220, // kcal
                 "carbohydrates": 25, // g
                 "sugars": 3, // g
@@ -504,7 +510,7 @@ export default {
                 "iron": 1.8, // mg
                 "calcium": 120, // mg
                 "magnesium": 30, // mg
-                "potassium": 250, // mg
+                "potasium": 250, // mg
                 "phosphorus": 180, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.36, // mg
@@ -518,6 +524,7 @@ export default {
                 "name": "Pizza Vegetariana",
                 "description": "Pizza cargada de vegetales frescos como pimientos, cebollas, tomates y aceitunas.",
                 "price": 11.50, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 180, // kcal
                 "carbohydrates": 22, // g
                 "sugars": 4, // g
@@ -531,7 +538,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 150, // mg
                 "magnesium": 40, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 160, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.3, // mg
@@ -545,6 +552,7 @@ export default {
                 "name": "Pizza BBQ de Carne Asada",
                 "description": "Pizza con salsa barbacoa, carne asada, cebollas caramelizadas y queso cheddar.",
                 "price": 13.50, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 280, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 5, // g
@@ -558,7 +566,7 @@ export default {
                 "iron": 2, // mg
                 "calcium": 180, // mg
                 "magnesium": 25, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.27, // mg
@@ -575,6 +583,7 @@ export default {
                 "name": "Wok de Pollo Teriyaki",
                 "description": "Salteado de pollo tierno con verduras frescas, bañado en salsa teriyaki, servido sobre arroz al vapor.",
                 "price": 9.50, // USD
+                "alergies": "Soja",
                 "calories": 180, // kcal
                 "carbohydrates": 25, // g
                 "sugars": 5, // g
@@ -588,7 +597,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 60, // mg
                 "magnesium": 30, // mg
-                "potassium": 250, // mg
+                "potasium": 250, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.24, // mg
@@ -602,6 +611,7 @@ export default {
                 "name": "Rollitos de Primavera Vegetarianos",
                 "description": "Rollitos crujientes rellenos de repollo, zanahorias, champiñones y fideos de arroz, acompañados de salsa agridulce.",
                 "price": 6.50, // USD
+                "alergies": "Gluten, Soja, Vegetariano",
                 "calories": 120, // kcal
                 "carbohydrates": 18, // g
                 "sugars": 3, // g
@@ -615,7 +625,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 40, // mg
                 "magnesium": 20, // mg
-                "potassium": 150, // mg
+                "potasium": 150, // mg
                 "phosphorus": 80, // mg
                 "zinc": 0.8, // mg
                 "vitamin_a": 0.15, // mg
@@ -629,6 +639,7 @@ export default {
                 "name": "Arroz Frito con Camarones",
                 "description": "Arroz salteado con camarones, guisantes, zanahorias y huevo, sazonado con especias asiáticas.",
                 "price": 11.00, // USD
+                "alergies": "Gluten, Mariscos",
                 "calories": 220, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 2, // g
@@ -642,7 +653,7 @@ export default {
                 "iron": 2.2, // mg
                 "calcium": 40, // mg
                 "magnesium": 35, // mg
-                "potassium": 220, // mg
+                "potasium": 220, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.24, // mg
@@ -656,6 +667,7 @@ export default {
                 "name": "Tofu Salteado con Verduras",
                 "description": "Tofu firme salteado con una mezcla de verduras frescas en una salsa de soja y jengibre.",
                 "price": 8.00, // USD
+                "alergies": "Soja, Vegetariano",
                 "calories": 160, // kcal
                 "carbohydrates": 18, // g
                 "sugars": 4, // g
@@ -669,7 +681,7 @@ export default {
                 "iron": 1.6, // mg
                 "calcium": 200, // mg
                 "magnesium": 45, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.30, // mg
@@ -698,7 +710,7 @@ export default {
                 "iron": 1, // mg
                 "calcium": 40, // mg
                 "magnesium": 25, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 100, // mg
                 "zinc": 0.8, // mg
                 "vitamin_a": 0.15, // mg
@@ -725,7 +737,7 @@ export default {
                 "iron": 1.2, // mg
                 "calcium": 30, // mg
                 "magnesium": 20, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.30, // mg
@@ -752,7 +764,7 @@ export default {
                 "iron": 1.8, // mg
                 "calcium": 100, // mg
                 "magnesium": 40, // mg
-                "potassium": 150, // mg
+                "potasium": 150, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.21, // mg
@@ -779,7 +791,7 @@ export default {
                 "iron": 1.2, // mg
                 "calcium": 30, // mg
                 "magnesium": 25, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 90, // mg
                 "zinc": 0.8, // mg
                 "vitamin_a": 0.09, // mg
@@ -795,6 +807,7 @@ export default {
                 "name": "Club Sandwich",
                 "description": "Tres capas de pan tostado rellenas de pollo, tocino, lechuga, tomate y mayonesa.",
                 "price": 5.00, // USD
+                "alergies": "Gluten, Lácteos, Carne, Vegetariano",
                 "calories": 250, // kcal
                 "carbohydrates": 20, // g
                 "sugars": 2, // g
@@ -808,7 +821,7 @@ export default {
                 "iron": 2, // mg
                 "calcium": 80, // mg
                 "magnesium": 30, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.3, // mg
@@ -835,7 +848,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 60, // mg
                 "magnesium": 25, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 100, // mg
                 "zinc": 1, // mg
                 "vitamin_a": 0.24, // mg
@@ -862,7 +875,7 @@ export default {
                 "iron": 2.5, // mg
                 "calcium": 120, // mg
                 "magnesium": 40, // mg
-                "potassium": 220, // mg
+                "potasium": 220, // mg
                 "phosphorus": 180, // mg
                 "zinc": 1.8, // mg
                 "vitamin_a": 0.36, // mg
@@ -889,7 +902,7 @@ export default {
                 "iron": 2.2, // mg
                 "calcium": 100, // mg
                 "magnesium": 35, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 160, // mg
                 "zinc": 1.6, // mg
                 "vitamin_a": 0.3, // mg
@@ -903,6 +916,7 @@ export default {
                 "name": "Wrap de Salmón Ahumado",
                 "description": "Wrap de salmón ahumado, queso crema, espinacas y cebolla roja.",
                 "price": 7.00, // USD
+                "alergies": "Pescado, Lácteos",
                 "calories": 220, // kcal
                 "carbohydrates": 15, // g
                 "sugars": 1, // g
@@ -916,7 +930,7 @@ export default {
                 "iron": 2.5, // mg
                 "calcium": 80, // mg
                 "magnesium": 30, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1.7, // mg
                 "vitamin_a": 0.27, // mg
@@ -943,7 +957,7 @@ export default {
                 "iron": 2.0, // mg
                 "calcium": 90, // mg
                 "magnesium": 40, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 130, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.24, // mg
@@ -959,6 +973,7 @@ export default {
                 "name": "Pollo Teriyaki con Piña",
                 "description": "Muslos de pollo glaseados con salsa teriyaki, acompañados de trozos de piña.",
                 "price": 9.50, // USD
+                "alergies": "Soja",
                 "calories": 200, // kcal
                 "carbohydrates": 15, // g
                 "sugars": 10, // g
@@ -972,7 +987,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 40, // mg
                 "magnesium": 30, // mg
-                "potassium": 250, // mg
+                "potasium": 250, // mg
                 "phosphorus": 180, // mg
                 "zinc": 1.8, // mg
                 "vitamin_a": 0.36, // mg
@@ -986,6 +1001,7 @@ export default {
                 "name": "Ensalada de Quinoa y Aguacate",
                 "description": "Ensalada fresca de quinoa, aguacate, tomate, pepino y aderezo de limón.",
                 "price": 8.00, // USD
+                "alergies": "Frutos secos",
                 "calories": 180, // kcal
                 "carbohydrates": 25, // g
                 "sugars": 2, // g
@@ -999,7 +1015,7 @@ export default {
                 "iron": 1.2, // mg
                 "calcium": 30, // mg
                 "magnesium": 20, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 120, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.24, // mg
@@ -1013,6 +1029,7 @@ export default {
                 "name": "Pasta Alfredo con Champiñones",
                 "description": "Pasta fettuccine en salsa Alfredo cremosa con champiñones salteados.",
                 "price": 10.00, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 280, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 3, // g
@@ -1026,7 +1043,7 @@ export default {
                 "iron": 2.5, // mg
                 "calcium": 80, // mg
                 "magnesium": 40, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 150, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.3, // mg
@@ -1040,6 +1057,7 @@ export default {
                 "name": "Sushi Rolls Variados",
                 "description": "Variedad de rolls de sushi, incluyendo rolls de aguacate, salmón y pepino.",
                 "price": 12.50, // USD
+                "alergies": "Pescado, Gluten, Sésamo",
                 "calories": 250, // kcal
                 "carbohydrates": 35, // g
                 "sugars": 5, // g
@@ -1053,7 +1071,7 @@ export default {
                 "iron": 1.8, // mg
                 "calcium": 60, // mg
                 "magnesium": 25, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 200, // mg
                 "zinc": 1.2, // mg
                 "vitamin_a": 0.27, // mg
@@ -1067,6 +1085,7 @@ export default {
                 "name": "Tacos de Camarones con Mango",
                 "description": "Tacos de camarones salteados con mango fresco, cilantro y salsa de chipotle.",
                 "price": 11.00, // USD
+                "alergies": "Mariscos",
                 "calories": 220, // kcal
                 "carbohydrates": 25, // g
                 "sugars": 5, // g
@@ -1080,7 +1099,7 @@ export default {
                 "iron": 2.2, // mg
                 "calcium": 40, // mg
                 "magnesium": 30, // mg
-                "potassium": 300, // mg
+                "potasium": 300, // mg
                 "phosphorus": 160, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.36, // mg
@@ -1094,6 +1113,7 @@ export default {
                 "name": "Bowl de Burrito con Guacamole",
                 "description": "Bowl con arroz, frijoles, carne asada, guacamole, pico de gallo y queso.",
                 "price": 10.50, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 260, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 2, // g
@@ -1107,7 +1127,7 @@ export default {
                 "iron": 2.5, // mg
                 "calcium": 80, // mg
                 "magnesium": 35, // mg
-                "potassium": 280, // mg
+                "potasium": 280, // mg
                 "phosphorus": 200, // mg
                 "zinc": 1.8, // mg
                 "vitamin_a": 0.45, // mg
@@ -1121,6 +1141,7 @@ export default {
                 "name": "Pizza Vegetariana de Berenjena",
                 "description": "Pizza con salsa de tomate, berenjena asada, espinacas, queso y albahaca.",
                 "price": 9.00, // USD
+                "alergies": "Gluten, Lácteos, Vegetariano",
                 "calories": 230, // kcal
                 "carbohydrates": 25, // g
                 "sugars": 3, // g
@@ -1134,7 +1155,7 @@ export default {
                 "iron": 2.0, // mg
                 "calcium": 120, // mg
                 "magnesium": 30, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 160, // mg
                 "zinc": 1.5, // mg
                 "vitamin_a": 0.3, // mg
@@ -1148,6 +1169,7 @@ export default {
                 "name": "Postre de Tiramisú",
                 "description": "Clásico postre italiano con capas de bizcocho empapado en café y crema de mascarpone.",
                 "price": 7.50, // USD
+                "alergies": "Gluten, Lácteos",
                 "calories": 280, // kcal
                 "carbohydrates": 30, // g
                 "sugars": 18, // g
@@ -1161,7 +1183,7 @@ export default {
                 "iron": 0.8, // mg
                 "calcium": 120, // mg
                 "magnesium": 15, // mg
-                "potassium": 100, // mg
+                "potasium": 100, // mg
                 "phosphorus": 70, // mg
                 "zinc": 0.8, // mg
                 "vitamin_a": 0.36, // mg
@@ -1190,7 +1212,7 @@ export default {
                 "iron": 0.3, // mg
                 "calcium": 20, // mg
                 "magnesium": 15, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 10, // mg
                 "zinc": 0.1, // mg
                 "vitamin_a": 0.03, // IU
@@ -1217,7 +1239,7 @@ export default {
                 "iron": 0.4, // mg
                 "calcium": 30, // mg
                 "magnesium": 20, // mg
-                "potassium": 200, // mg
+                "potasium": 200, // mg
                 "phosphorus": 15, // mg
                 "zinc": 0.2, // mg
                 "vitamin_a": 0.06, // mg
@@ -1231,6 +1253,7 @@ export default {
                 "name": "Smoothie de Bayas y Yogur",
                 "description": "Mezcla cremosa de bayas frescas con yogur natural.",
                 "price": 6.50, // USD
+                "alergies": "Nueces, Lácteos",
                 "calories": 70, // kcal
                 "carbohydrates": 15, // g
                 "sugars": 10, // g
@@ -1244,7 +1267,7 @@ export default {
                 "iron": 0.2, // mg
                 "calcium": 80, // mg
                 "magnesium": 10, // mg
-                "potassium": 120, // mg
+                "potasium": 120, // mg
                 "phosphorus": 20, // mg
                 "zinc": 0.1, // mg
                 "vitamin_a": 0.03, // mg
@@ -1258,6 +1281,7 @@ export default {
                 "name": "Smoothie de Proteínas con Almendras",
                 "description": "Batido de proteínas con plátano, almendras y leche de almendras.",
                 "price": 7.00, // USD
+                "alergies": "Nueces, Lácteos",
                 "calories": 90, // kcal
                 "carbohydrates": 10, // g
                 "sugars": 6, // g
@@ -1271,7 +1295,7 @@ export default {
                 "iron": 1.2, // mg
                 "calcium": 120, // mg
                 "magnesium": 30, // mg
-                "potassium": 180, // mg
+                "potasium": 180, // mg
                 "phosphorus": 40, // mg
                 "zinc": 0.4, // mg
                 "vitamin_a": 0.01, // mg
@@ -1298,7 +1322,7 @@ export default {
                 "iron": 1.5, // mg
                 "calcium": 30, // mg
                 "magnesium": 20, // mg
-                "potassium": 120, // mg
+                "potasium": 120, // mg
                 "phosphorus": 15, // mg
                 "zinc": 0.3, // mg
                 "vitamin_a": 0.06, // mg
@@ -1312,6 +1336,7 @@ export default {
                 "name": "Smoothie de Mango y Coco",
                 "description": "Combinación tropical de mango fresco y leche de coco.",
                 "price": 5.00, // USD
+                "alergies": "Nueces, Lácteos",
                 "calories": 80, // kcal
                 "carbohydrates": 18, // g
                 "sugars": 15, // g
@@ -1325,7 +1350,7 @@ export default {
                 "iron": 0.5, // mg
                 "calcium": 40, // mg
                 "magnesium": 15, // mg
-                "potassium": 160, // mg
+                "potasium": 160, // mg
                 "phosphorus": 10, // mg
                 "zinc": 0.2, // mg
                 "vitamin_a": 0.03, // mg
@@ -1336,6 +1361,98 @@ export default {
                 "vitamin_k": 0.2 // mg
               }
         ],
-    }
+    },
+    tags: [
+        "Italiana",
+        "Mexicana",
+        "Asiática",
+        "Mediterránea",
+        "Americana",
+        "Francesa",
+        "Española",
+        "India",
+        "Tailandesa",
+        "China",
+        "Japonesa",
+        "Asado",
+        "Parrilla",
+        "Estofado",
+        "Salteado",
+        "Frito",
+        "Al horno",
+        "Crudo",
+        "Pollo",
+        "Carne de res",
+        "Pescado",
+        "Mariscos",
+        "Verduras",
+        "Queso",
+        "Pasta",
+        "Arroz",
+        "Gourmet",
+        "Casero",
+        "Rústico",
+        "Elegante",
+        "Creativo",
+        "Saludable",
+        "Bebida",
+        "Vegetariano",
+        "Ensalada",
+        "Desayuno",
+        "Almuerzo",
+        "Cena",
+        "Postre",
+        "Poco picante",
+        "Muy Picante"
+    ],
+    tagsDishes: [
+        ["Espresso Doble", ["Italiana"]],
+        ["Latte de Vainilla", ["Italiana"]],
+        ["Té Chai Especiado", ["Asiática"]],
+        ["Croissant de Almendra", ["Francesa", "Desayuno", "Rústico"]],
+        ["Ensalada Mediterránea", ["Mediterránea", "Ensalada"]],
+        ["Sandwich de Pavo y Aguacate", ["Americana", "Almuerzo"]],
+        ["Tarta de Manzana Casera", ["Postre", "Casero"]],
+        ["Smoothie de Frutas Tropicales", ["Desayuno", "Bebida", "Saludable"]],
+        ["Ensalada de Pollo a la Parrilla", ["Americana", "Ensalada", "Almuerzo"]],
+        ["Wrap de Pavo y Vegetales", ["Americana", "Almuerzo"]],
+        ["Bowl de Quinoa con Verduras Asadas", ["Vegetariano", "Almuerzo", "Cena"]],
+        ["Batido Verde Energizante", ["Desayuno", "Bebida", "Saludable"]],
+        ["Sándwich de Aguacate y Huevo", ["Desayuno", "Americana"]],
+        ["Bowl de Acai con Granola y Frutas", ["Desayuno", "Postre", "Saludable"]],
+        ["Pizza Margarita", ["Italiana", "Cena"]],
+        ["Pizza Pepperoni y Champiñones", ["Italiana", "Cena"]],
+        ["Calzone de Pollo y Queso Ricotta", ["Italiana", "Cena"]],
+        ["Pizza Vegetariana", ["Italiana", "Vegetariano", "Cena"]],
+        ["Pizza BBQ de Carne Asada", ["Americana", "Cena"]],
+        ["Wok de Pollo Teriyaki", ["Asiática", "Cena"]],
+        ["Rollitos de Primavera Vegetarianos", ["Asiática"]],
+        ["Arroz Frito con Camarones", ["Asiática", "Cena"]],
+        ["Tofu Salteado con Verduras", ["Vegetariano", "Asiática", "Cena"]],
+        ["Taco al Pastor", ["Mexicana", "Almuerzo"]],
+        ["Taco de Barbacoa", ["Mexicana", "Almuerzo"]],
+        ["Quesadilla de Chorizo y Queso", ["Mexicana", "Almuerzo"]],
+        ["Taco Vegano de Champiñones", ["Mexicana", "Vegetariano", "Almuerzo"]],
+        ["Club Sandwich", ["Americana", "Almuerzo"]],
+        ["Vegetariano Wrap", ["Vegetariano", "Almuerzo"]],
+        ["Panini de Pavo y Queso", ["Italiana", "Americana", "Almuerzo"]],
+        ["Sándwich de Pollo Pesto", ["Italiana", "Almuerzo"]],
+        ["Wrap de Salmón Ahumado", ["Americana", "Almuerzo"]],
+        ["Sándwich de Aguacate y Queso de Cabra", ["Americana", "Almuerzo"]],
+        ["Pollo Teriyaki con Piña", ["Asiática", "Cena"]],
+        ["Ensalada de Quinoa y Aguacate", ["Saludable", "Ensalada"]],
+        ["Pasta Alfredo con Champiñones", ["Italiana", "Cena"]],
+        ["Sushi Rolls Variados", ["Asiática", "Cena"]],
+        ["Tacos de Camarones con Mango", ["Mexicana", "Cena"]],
+        ["Bowl de Burrito con Guacamole", ["Mexicana", "Cena"]],
+        ["Pizza Vegetariana de Berenjena", ["Italiana", "Vegetariano", "Cena"]],
+        ["Postre de Tiramisú", ["Italiana", "Postre"]],
+        ["Smoothie Energizante de Frutas Tropicales", ["Desayuno", "Bebida", "Saludable"]],
+        ["Smoothie Verde Detox", ["Desayuno", "Bebida", "Saludable"]],
+        ["Smoothie de Bayas y Yogur", ["Desayuno", "Bebida", "Saludable"]],
+        ["Smoothie de Proteínas con Almendras", ["Desayuno", "Bebida", "Saludable"]],
+        ["Smoothie de Acai Bowl", ["Desayuno", "Bebida", "Saludable"]],
+        ["Smoothie de Mango y Coco", ["Desayuno", "Bebida", "Saludable"]]
+    ]
     
 }

@@ -43,30 +43,30 @@ model Dish {
     updated_at      DateTime        @updatedAt
     name            String
     description     String
-    price           Decimal
+    price           Decimal         @db.Decimal(5,2)
     alergies        String?
     calories        Int
-    carbohydrates   Decimal
-    sugars          Decimal
-    fiber           Decimal
-    fats            Decimal
-    saturated_fats  Decimal?
-    trans_fats      Decimal?
-    cholesterol     Decimal?
-    proteins        Decimal
-    sodium          Decimal?
-    iron            Decimal?
-    calcium         Decimal?
-    magnesium       Decimal?
-    potasium        Decimal?
-    phosphorus      Decimal?
-    zinc            Decimal?
-    vitamin_a       Decimal?
-    vitamin_b       Decimal?
-    vitamin_c       Decimal?
-    vitamin_d       Decimal?
-    vitamin_e       Decimal?
-    vitamin_k       Decimal?
+    carbohydrates   Decimal         @db.Decimal(5,2)
+    sugars          Decimal         @db.Decimal(5,2)
+    fiber           Decimal         @db.Decimal(5,2)
+    fats            Decimal         @db.Decimal(5,2)
+    saturated_fats  Decimal?        @db.Decimal(5,2)        
+    trans_fats      Decimal?        @db.Decimal(5,2)
+    cholesterol     Decimal?        @db.Decimal(5,2)
+    proteins        Decimal         @db.Decimal(5,2)
+    sodium          Decimal?        @db.Decimal(5,2)
+    iron            Decimal?        @db.Decimal(5,2)
+    calcium         Decimal?        @db.Decimal(5,2)
+    magnesium       Decimal?        @db.Decimal(5,2)
+    potasium        Decimal?        @db.Decimal(5,2)
+    phosphorus      Decimal?        @db.Decimal(5,2)
+    zinc            Decimal?        @db.Decimal(5,2)
+    vitamin_a       Decimal?        @db.Decimal(5,2)
+    vitamin_b       Decimal?        @db.Decimal(5,2)
+    vitamin_c       Decimal?        @db.Decimal(5,2)
+    vitamin_d       Decimal?        @db.Decimal(5,2)
+    vitamin_e       Decimal?        @db.Decimal(5,2)
+    vitamin_k       Decimal?        @db.Decimal(5,2)
     restaurant      Restaurant          @relation(fields: [restaurant_id], references: [id], onDelete: Cascade)
     restaurant_id   Int
     tags            DishFoodTypeTag[]
