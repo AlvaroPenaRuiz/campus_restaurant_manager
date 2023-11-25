@@ -43,6 +43,7 @@ model Dish {
     updated_at      DateTime        @updatedAt
     name            String
     description     String
+    price           Decimal
     alergies        String?
     calories        Int
     carbohydrates   Decimal

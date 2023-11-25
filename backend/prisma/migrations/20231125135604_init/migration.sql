@@ -35,6 +35,7 @@ CREATE TABLE "Dish" (
     "updated_at" TIMESTAMP(3) NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "price" DECIMAL(65,30) NOT NULL,
     "alergies" TEXT,
     "calories" INTEGER NOT NULL,
     "carbohydrates" DECIMAL(65,30) NOT NULL,
