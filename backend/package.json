@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon --legacy-watch src/index.ts -e ts",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --name init --schema=./prisma/schema.prisma",
     "prisma:seed": "ts-node prisma/seed.ts"
