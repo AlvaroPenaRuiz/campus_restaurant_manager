@@ -102,6 +102,7 @@ CREATE TABLE "Reservation" (
     "amount_people" INTEGER NOT NULL,
     "hour" INTEGER NOT NULL,
     "minute" INTEGER NOT NULL,
+    "restaurant_id" INTEGER NOT NULL,
 
     CONSTRAINT "Reservation_pkey" PRIMARY KEY ("id")
 );
@@ -134,10 +135,25 @@ CREATE UNIQUE INDEX "User_user_id_key" ON "User"("user_id");
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Restaurant_name_key" ON "Restaurant"("name");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Dish_name_restaurant_id_key" ON "Dish"("name", "restaurant_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Timetable_dish_id_date_id_key" ON "Timetable"("dish_id", "date_id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Date_day_month_year_key" ON "Date"("day", "month", "year");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "DishFoodTypeTag_dish_id_tag_id_key" ON "DishFoodTypeTag"("dish_id", "tag_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "FoodTypeTag_name_key" ON "FoodTypeTag"("name");
 
 -- AddForeignKey
 ALTER TABLE "User" ADD CONSTRAINT "User_restaurant_id_fkey" FOREIGN KEY ("restaurant_id") REFERENCES "Restaurant"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -153,6 +169,9 @@ ALTER TABLE "Timetable" ADD CONSTRAINT "Timetable_date_id_fkey" FOREIGN KEY ("da
 
 -- AddForeignKey
 ALTER TABLE "Reservation" ADD CONSTRAINT "Reservation_date_id_fkey" FOREIGN KEY ("date_id") REFERENCES "Date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Reservation" ADD CONSTRAINT "Reservation_restaurant_id_fkey" FOREIGN KEY ("restaurant_id") REFERENCES "Restaurant"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "DishFoodTypeTag" ADD CONSTRAINT "DishFoodTypeTag_dish_id_fkey" FOREIGN KEY ("dish_id") REFERENCES "Dish"("id") ON DELETE CASCADE ON UPDATE CASCADE;
