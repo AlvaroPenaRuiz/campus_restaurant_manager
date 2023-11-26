@@ -108,4 +108,6 @@ dishRouter.delete("/:id", (req, res)=>{
     })
 })
 
+// TODO: Crear un "/detach-to-tag"
+
 export default dishRouter
