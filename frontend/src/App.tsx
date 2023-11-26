@@ -1,8 +1,10 @@
-function App() {
+import Layout from "./components/layout"
+
+const App = () => {
 
   return (
     <>
-      <h1>Campus Restaurant Manager</h1>
+      <Layout/>
     </>
   )
 }
