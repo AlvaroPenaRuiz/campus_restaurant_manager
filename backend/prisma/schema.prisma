@@ -44,6 +44,7 @@ model Dish {
     name            String
     description     String
     price           Decimal         @db.Decimal(5,2)
+    vegetarian      Boolean         @default(false)
     alergies        String?
     calories        Int
     carbohydrates   Decimal         @db.Decimal(5,2)
@@ -67,7 +68,7 @@ model Dish {
     vitamin_d       Decimal?        @db.Decimal(5,2)
     vitamin_e       Decimal?        @db.Decimal(5,2)
     vitamin_k       Decimal?        @db.Decimal(5,2)
-    restaurant      Restaurant          @relation(fields: [restaurant_id], references: [id], onDelete: Cascade)
+    restaurant      Restaurant      @relation(fields: [restaurant_id], references: [id], onDelete: Cascade)
     restaurant_id   Int
     tags            DishFoodTypeTag[]
     dates           Timetable[]
@@ -78,7 +79,7 @@ model Timetable {
     created_at      DateTime    @default(now())
     updated_at      DateTime    @updatedAt
     dish_id         Int
-    dish            Dish        @relation(fields: [dish_id], references: [id])
+    dish            Dish        @relation(fields: [dish_id], references: [id], onDelete: Cascade)
     date_id         Int
     date            Date        @relation(fields: [date_id], references: [id])
 }
@@ -116,9 +117,9 @@ model DishFoodTypeTag {
     created_at      DateTime            @default(now())
     updated_at      DateTime            @updatedAt
     dish_id         Int                 
-    dish            Dish                @relation(fields: [dish_id], references: [id])
+    dish            Dish                @relation(fields: [dish_id], references: [id], onDelete: Cascade)
     tag_id          Int
-    tag             FoodTypeTag         @relation(fields: [tag_id], references: [id])
+    tag             FoodTypeTag         @relation(fields: [tag_id], references: [id], onDelete: Cascade)
 }
 
 model FoodTypeTag {

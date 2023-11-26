@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 const main = async () => {
 
     // Inserting restaurants and dishes
-    await Promise.all(data.restaurants.map(async restaurant => {
+    let restaurants = await Promise.all(data.restaurants.map(async restaurant => {
 
         //@ts-ignore
         return await prisma.restaurant.create({
@@ -25,7 +25,7 @@ const main = async () => {
     }))
 
     // Inserting dates
-    const dates = []
+    const datesPromises = []
     for (let i = 0; i < 365; i++) {
         const date = new Date()
         date.setDate(date.getDate() + i)
@@ -33,7 +33,7 @@ const main = async () => {
         const isWorkable = date.getDay() >= 1 && date.getDay() <= 5
         const isVegetarian = Math.random() < 0.2    // 1/5 posibilities
 
-        dates.push(prisma.date.create({
+        datesPromises.push(prisma.date.create({
             // @ts-ignore
             data: {
                 day: date.getDate(),
@@ -46,7 +46,45 @@ const main = async () => {
 
     }
         
-    await Promise.all(dates)
+    await Promise.all(datesPromises)
+
+    // Relationships between dates and dishes
+    const dates = await prisma.date.findMany({
+        take: 10,
+        orderBy: [
+            {year: "asc"},
+            {month:"asc"},
+            {day: "asc"}
+        ],
+        where: {
+            workable: true
+        }
+    })
+
+    restaurants = await prisma.restaurant.findMany()
+    
+    await Promise.all(dates.flatMap(async (date) =>{
+        return restaurants.flatMap(async (restaurant) =>{
+            let dishes
+            if (date.vegetarian){
+                dishes = await prisma.dish.findMany({where: {restaurant_id: restaurant.id, vegetarian: true}})
+            } else {
+                dishes = await prisma.dish.findMany({
+                    where: {restaurant_id: restaurant.id, vegetarian: true},
+                    take: 3
+                })
+            }
+            return dishes.map(async (dish) =>{
+                return prisma.timetable.create({
+                    data: {
+                        dish_id: dish.id,
+                        date_id: date.id
+                    }
+                })
+            })
+        })
+    }))
+    
     
     // Inserting Tags
     await Promise.all( data.tags.map(async (tag) =>{
@@ -61,12 +99,8 @@ const main = async () => {
         const dish_ids = (await prisma.dish.findMany({where:{name: (relation[0]) as string }})).map(dish => dish.id)
         const tag_ids = await Promise.all((relation[1] as string[]).map(async (tag) =>{
             // @ts-ignore
-            const result = await prisma.foodTypeTag.findFirst({where:{name: tag }})
-            if (result){
-                return result.id
-            } else {
-                console.log(tag)
-            }
+                return (await prisma.foodTypeTag.findFirst({where:{name: tag }})).id
+
             
         }))
         // @ts-ignore
@@ -81,6 +115,20 @@ const main = async () => {
             })
         })
     }))
+
+    // Insert users and relate them to restaurant
+    const usersPromises = []
+        for (let i = 0; i< 8; i++){
+            usersPromises.push(prisma.user.create({
+                data: {
+                    ...data.users[i],
+                    restaurant_id: restaurants[i].id
+                }
+            }))
+        }
+        usersPromises.push(prisma.user.create({data: {...data.users[8]}}))
+    
+    await Promise.all(usersPromises)
 
 }
 

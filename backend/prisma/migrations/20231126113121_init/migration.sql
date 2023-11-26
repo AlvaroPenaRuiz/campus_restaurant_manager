@@ -36,6 +36,7 @@ CREATE TABLE "Dish" (
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "price" DECIMAL(5,2) NOT NULL,
+    "vegetarian" BOOLEAN NOT NULL DEFAULT false,
     "alergies" TEXT,
     "calories" INTEGER NOT NULL,
     "carbohydrates" DECIMAL(5,2) NOT NULL,
@@ -145,7 +146,7 @@ ALTER TABLE "User" ADD CONSTRAINT "User_restaurant_id_fkey" FOREIGN KEY ("restau
 ALTER TABLE "Dish" ADD CONSTRAINT "Dish_restaurant_id_fkey" FOREIGN KEY ("restaurant_id") REFERENCES "Restaurant"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Timetable" ADD CONSTRAINT "Timetable_dish_id_fkey" FOREIGN KEY ("dish_id") REFERENCES "Dish"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Timetable" ADD CONSTRAINT "Timetable_dish_id_fkey" FOREIGN KEY ("dish_id") REFERENCES "Dish"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Timetable" ADD CONSTRAINT "Timetable_date_id_fkey" FOREIGN KEY ("date_id") REFERENCES "Date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -154,7 +155,7 @@ ALTER TABLE "Timetable" ADD CONSTRAINT "Timetable_date_id_fkey" FOREIGN KEY ("da
 ALTER TABLE "Reservation" ADD CONSTRAINT "Reservation_date_id_fkey" FOREIGN KEY ("date_id") REFERENCES "Date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "DishFoodTypeTag" ADD CONSTRAINT "DishFoodTypeTag_dish_id_fkey" FOREIGN KEY ("dish_id") REFERENCES "Dish"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "DishFoodTypeTag" ADD CONSTRAINT "DishFoodTypeTag_dish_id_fkey" FOREIGN KEY ("dish_id") REFERENCES "Dish"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "DishFoodTypeTag" ADD CONSTRAINT "DishFoodTypeTag_tag_id_fkey" FOREIGN KEY ("tag_id") REFERENCES "FoodTypeTag"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "DishFoodTypeTag" ADD CONSTRAINT "DishFoodTypeTag_tag_id_fkey" FOREIGN KEY ("tag_id") REFERENCES "FoodTypeTag"("id") ON DELETE CASCADE ON UPDATE CASCADE;

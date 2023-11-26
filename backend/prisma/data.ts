@@ -329,6 +329,7 @@ export default {
                 "name": "Bowl de Quinoa con Verduras Asadas",
                 "description": "Bowl nutritivo con quinoa, brócoli, zanahorias y calabacines asados, aderezado con aceite de oliva.",
                 "price": 10.50, // USD
+                "vegetarian": true,
                 "calories": 120, // kcal
                 "carbohydrates": 20, // g
                 "sugars": 2, // g
@@ -524,6 +525,7 @@ export default {
                 "name": "Pizza Vegetariana",
                 "description": "Pizza cargada de vegetales frescos como pimientos, cebollas, tomates y aceitunas.",
                 "price": 11.50, // USD
+                "vegetarian": true,
                 "alergies": "Gluten, Lácteos",
                 "calories": 180, // kcal
                 "carbohydrates": 22, // g
@@ -610,7 +612,8 @@ export default {
               {
                 "name": "Rollitos de Primavera Vegetarianos",
                 "description": "Rollitos crujientes rellenos de repollo, zanahorias, champiñones y fideos de arroz, acompañados de salsa agridulce.",
-                "price": 6.50, // USD
+                "price": 6.50, // 
+                "vegetarian": true,
                 "alergies": "Gluten, Soja, Vegetariano",
                 "calories": 120, // kcal
                 "carbohydrates": 18, // g
@@ -667,6 +670,7 @@ export default {
                 "name": "Tofu Salteado con Verduras",
                 "description": "Tofu firme salteado con una mezcla de verduras frescas en una salsa de soja y jengibre.",
                 "price": 8.00, // USD
+                "vegetarian": true,
                 "alergies": "Soja, Vegetariano",
                 "calories": 160, // kcal
                 "carbohydrates": 18, // g
@@ -778,6 +782,7 @@ export default {
                 "name": "Taco Vegano de Champiñones",
                 "description": "Champiñones salteados con ajo, cebolla, pimientos y guacamole en una tortilla de maíz.",
                 "price": 3.50, // USD
+                "vegetarian": true,
                 "calories": 120, // kcal
                 "carbohydrates": 15, // g
                 "sugars": 2, // g
@@ -835,6 +840,7 @@ export default {
                 "name": "Vegetariano Wrap",
                 "description": "Wrap de tortilla de espinaca relleno de hummus, aguacate, tomate, lechuga y pepino.",
                 "price": 4.75, // USD
+                "vegetarian": true,
                 "calories": 200, // kcal
                 "carbohydrates": 18, // g
                 "sugars": 1, // g
@@ -1141,6 +1147,7 @@ export default {
                 "name": "Pizza Vegetariana de Berenjena",
                 "description": "Pizza con salsa de tomate, berenjena asada, espinacas, queso y albahaca.",
                 "price": 9.00, // USD
+                "vegetarian": true,
                 "alergies": "Gluten, Lácteos, Vegetariano",
                 "calories": 230, // kcal
                 "carbohydrates": 25, // g
@@ -1453,6 +1460,89 @@ export default {
         ["Smoothie de Proteínas con Almendras", ["Desayuno", "Bebida", "Saludable"]],
         ["Smoothie de Acai Bowl", ["Desayuno", "Bebida", "Saludable"]],
         ["Smoothie de Mango y Coco", ["Desayuno", "Bebida", "Saludable"]]
+    ],
+    users: [
+      {
+        "name": "John",
+        "lastname": "Doe",
+        "user_id": "ABC123456DEF",
+        "username": "john.doe",
+        "password": "password123",
+        "email": "john.doe@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Alice",
+        "lastname": "Smith",
+        "user_id": "XYZ789012MNO",
+        "username": "alice.smith",
+        "password": "securepass",
+        "email": "alice.smith@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Bob",
+        "lastname": "Johnson",
+        "user_id": "PQR345678STU",
+        "username": "bob.johnson",
+        "password": "bobpass123",
+        "email": "bob.johnson@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Eva",
+        "lastname": "Brown",
+        "user_id": "LMN901234OPQ",
+        "username": "eva.brown",
+        "password": "evapass",
+        "email": "eva.brown@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Charlie",
+        "lastname": "Williams",
+        "user_id": "GHI567890JKL",
+        "username": "charlie.williams",
+        "password": "charliepass",
+        "email": "charlie.williams@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Grace",
+        "lastname": "Miller",
+        "user_id": "DEF234567GHI",
+        "username": "grace.miller",
+        "password": "gracepass",
+        "email": "grace.miller@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "David",
+        "lastname": "Jones",
+        "user_id": "JKL890123MNP",
+        "username": "david.jones",
+        "password": "davidpass123",
+        "email": "david.jones@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Sophia",
+        "lastname": "Davis",
+        "user_id": "UVW456789XYZ",
+        "username": "sophia.davis",
+        "password": "sophiapass",
+        "email": "sophia.davis@campus-test.com",
+        "admin": false
+      },
+      {
+        "name": "Alvaro",
+        "lastname": "Pena Ruiz",
+        "user_id": "APR030293APR",
+        "username": "alvaro.penaruiz",
+        "password": "administrador",
+        "email": "alvaro.penaruiz@campus-test.com",
+        "admin": true
+      }
     ]
     
 }
