@@ -1,24 +1,13 @@
 import { useEffect, useState } from "react"
 import { getRestaurants } from "../services/restaurant"
-
-interface Restaurant {
-  name: string,
-  location: string, 
-  description: string, 
-  timetable: string
-}
+import { RestaurantType } from "../types/Restaurant"
 
 const Restaurants = () => {
 
-  const [restaurants, setRestaurants] = useState({} as Restaurant[])
+  const [restaurants, setRestaurants] = useState({} as RestaurantType[])
 
   useEffect(()=>{
-    getRestaurants().then((response)=>{
-      setRestaurants(response.data.map((restaurant: Restaurant) => {
-          const {name, location, description, timetable} = restaurant
-          return {name, location,description,timetable}
-      }))
-    })
+    getRestaurants().then( response => setRestaurants(response.data) )
 
   }, [])
 
@@ -30,10 +19,12 @@ const Restaurants = () => {
         <div>
             { restaurants.length > 0 ? restaurants.map((restaurant, index) => {
               return  <div key={index}>
-                        <h2>{restaurant.name}</h2>
-                        <p>({restaurant.location})</p>
-                        <p>{restaurant.description}</p>
-                        <p>{restaurant.timetable}</p>
+                        <a href={`restaurant/${restaurant.id}`}>
+                          <h2>{restaurant.name}</h2>
+                          <p>({restaurant.location})</p>
+                          <p>{restaurant.description}</p>
+                          <p>{`From ${restaurant.hour_opening}:00 to ${restaurant.hour_closing}:00`}</p>
+                        </a>
                       </div>}) : <></>
             } 
         </div>

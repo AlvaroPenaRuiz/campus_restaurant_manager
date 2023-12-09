@@ -4,49 +4,57 @@ export default {
             name: "Café Académico",
             location: "Edificio Principal - Planta Baja - EP R014",
             description: "Ofrecemos una variedad de café, té y pasteles para estudiantes y profesores.",
-            timetable: "8:00 AM - 6:00 PM",
+            hour_opening: 8,
+            hour_closing: 18,
         },
         {
             name: "Sabor Saludable",
             location: "Centro Deportivo - Primera Planta - CD R122",
             description: "Comida saludable y nutritiva para mantener a los estudiantes en forma.",
-            timetable: "11:00 AM - 8:00 PM"
+            hour_opening: 11,
+            hour_closing: 20,
         },
         {
             name: "Pizzería Universitaria",
             location: "Área Recreativa - Primera Planta - AR R102",
             description: "Variedad de pizzas deliciosas para satisfacer tus antojos.",
-            timetable: "12:00 PM - 9:00 PM"
+            hour_opening: 12,
+            hour_closing: 21,
         },
         {
             name: "Wok Express",
             location: "Zona de Ciencias - Segunda Planta - ZC R220",
             description: "Cocina asiática rápida y deliciosa para estudiantes ocupados.",
-            timetable: "11:30 AM - 7:30 PM"
+            hour_opening: 11,
+            hour_closing: 20,
         },
         {
             name: "Taco Lab",
             location: "Facultad de Artes - Planta Baja - FA R012",
             description: "Auténticos tacos mexicanos para aquellos que aman la comida picante.",
-            timetable: "10:30 AM - 8:00 PM"
+            hour_opening: 11,
+            hour_closing: 20,
         },
         {
             name: "Sandwich Hub",
             location: "Biblioteca General - Primera Planta - BG R103",
             description: "Variedad de sándwiches frescos para llevar a tus estudios o lecturas.",
-            timetable: "9:00 AM - 7:00 PM"
+            hour_opening: 9,
+            hour_closing: 19,
         },
         {
             name: "Buffet Creativo",
             location: "Edificio de Ingeniería - Planta Baja - EI R028",
             description: "Un buffet con opciones creativas y deliciosas para satisfacer a todos los paladares.",
-            timetable: "12:30 PM - 8:30 PM"
+            hour_opening: 12,
+            hour_closing: 21,
         },
         {
             name: "Smoothie Oasis",
             location: "Área Verde - Planta Baja - AV R001",
             description: "Smoothies frescos y saludables para mantenerte energizado durante el día.",
-            timetable: "8:30 AM - 5:30 PM"
+            hour_opening: 8,
+            hour_closing: 18,
         }
     ],
     "dishes": {

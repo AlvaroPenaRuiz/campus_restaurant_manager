@@ -1,0 +1,52 @@
+@font-face {
+    font-family: mainFont;
+    src: url(assets/Prompt-Regular.ttf);
+    font-weight: bolder;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: mainFont;
+}
+
+nav{
+    background-color: #422532;
+    display: grid;
+    grid-template-rows: 3rem 8fr 1fr;
+    grid-template-columns: 6fr 1fr 6fr;
+}
+
+footer{
+    background-color: #422532;
+    height: 4rem;
+}
+
+.mainNavLeft, .mainNavCenter, .mainNavRight{
+    display: grid;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.mainNavLeft{
+    grid-template-columns: repeat(6, 1fr) 2fr;
+}
+
+.mainNavRight{
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.invalid {
+    border: solid red 1px;
+}
+input:focus {
+    outline: none;
+}

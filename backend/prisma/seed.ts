@@ -15,7 +15,8 @@ const main = async () => {
                 name: restaurant.name,
                 description: restaurant.description,
                 location: restaurant.location,
-                timetable: restaurant.timetable,
+                hour_opening: restaurant.hour_opening,
+                hour_closing: restaurant.hour_closing,
                 dishes: {
                     //@ts-ignore
                     create: data.dishes[`${restaurant.name}`]

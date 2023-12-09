@@ -32,7 +32,8 @@ model Restaurant {
     name            String      @unique
     location        String      
     description     String
-    timetable       String
+    hour_opening    Int
+    hour_closing    Int
     users           User[]
     dishes          Dish[]
     reservations    Reservation[]

@@ -16,10 +16,42 @@ dateRouter.get("/", (req, res)=>{
     })
 })
 
+dateRouter.get("/nextDays/:days", (req, res)=>{
+    const amountOfDays = Number(req.params.days)
+    // @ts-ignore
+    prisma.date.findMany({
+        include:{dishes: {include: {dish: {include: {restaurant: true}}}}},
+        take: amountOfDays,
+        orderBy: [
+            {year: "asc"},
+            {month:"asc"},
+            {day: "asc"}
+        ]
+    }).then((results)=>{
+        res.json(results)
+    }).catch((error)=>{
+        res.send(error)
+    })
+})
+
 dateRouter.get("/:id", (req, res)=>{
     const id = Number(req.params.id)
     prisma.date.findUnique({
         where: {id},
+        include:{dishes: {include: {dish: {include: {restaurant: true}}}}}
+    }).then((results)=>{
+        res.json(results)
+    }).catch((error)=>{
+        res.send(error)
+    })
+})
+
+dateRouter.get("/year/:year/month/:month/day/:day", (req, res)=>{
+    const day = Number(req.params.day)
+    const month = Number(req.params.month)
+    const year = Number(req.params.year)
+    prisma.date.findUnique({
+        where: {day_month_year: {day, month, year}},
         include:{dishes: {include: {dish: {include: {restaurant: true}}}}}
     }).then((results)=>{
         res.json(results)

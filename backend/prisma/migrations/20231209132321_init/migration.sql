@@ -23,7 +23,8 @@ CREATE TABLE "Restaurant" (
     "name" TEXT NOT NULL,
     "location" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "timetable" TEXT NOT NULL,
+    "hour_opening" INTEGER NOT NULL,
+    "hour_closing" INTEGER NOT NULL,
 
     CONSTRAINT "Restaurant_pkey" PRIMARY KEY ("id")
 );
