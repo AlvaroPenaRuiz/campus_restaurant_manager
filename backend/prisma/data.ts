@@ -1,3 +1,5 @@
+import { encrypt256 } from "../src/utils/encryption";
+
 export default {
     "restaurants": [
         {
@@ -1475,7 +1477,7 @@ export default {
         "lastname": "Doe",
         "user_id": "ABC123456DEF",
         "username": "john.doe",
-        "password": "password123",
+        "password": encrypt256("password123"),
         "email": "john.doe@campus-test.com",
         "admin": false
       },
@@ -1484,7 +1486,7 @@ export default {
         "lastname": "Smith",
         "user_id": "XYZ789012MNO",
         "username": "alice.smith",
-        "password": "securepass",
+        "password": encrypt256("securepass"),
         "email": "alice.smith@campus-test.com",
         "admin": false
       },
@@ -1493,7 +1495,7 @@ export default {
         "lastname": "Johnson",
         "user_id": "PQR345678STU",
         "username": "bob.johnson",
-        "password": "bobpass123",
+        "password": encrypt256("bobpass123"),
         "email": "bob.johnson@campus-test.com",
         "admin": false
       },
@@ -1502,7 +1504,7 @@ export default {
         "lastname": "Brown",
         "user_id": "LMN901234OPQ",
         "username": "eva.brown",
-        "password": "evapass",
+        "password": encrypt256("evapass"),
         "email": "eva.brown@campus-test.com",
         "admin": false
       },
@@ -1511,7 +1513,7 @@ export default {
         "lastname": "Williams",
         "user_id": "GHI567890JKL",
         "username": "charlie.williams",
-        "password": "charliepass",
+        "password": encrypt256("charliepass"),
         "email": "charlie.williams@campus-test.com",
         "admin": false
       },
@@ -1520,7 +1522,7 @@ export default {
         "lastname": "Miller",
         "user_id": "DEF234567GHI",
         "username": "grace.miller",
-        "password": "gracepass",
+        "password": encrypt256("gracepass"),
         "email": "grace.miller@campus-test.com",
         "admin": false
       },
@@ -1529,7 +1531,7 @@ export default {
         "lastname": "Jones",
         "user_id": "JKL890123MNP",
         "username": "david.jones",
-        "password": "davidpass123",
+        "password": encrypt256("davidpass123"),
         "email": "david.jones@campus-test.com",
         "admin": false
       },
@@ -1538,7 +1540,7 @@ export default {
         "lastname": "Davis",
         "user_id": "UVW456789XYZ",
         "username": "sophia.davis",
-        "password": "sophiapass",
+        "password": encrypt256("sophiapass"),
         "email": "sophia.davis@campus-test.com",
         "admin": false
       },
@@ -1547,7 +1549,7 @@ export default {
         "lastname": "Pena Ruiz",
         "user_id": "APR030293APR",
         "username": "alvaro.penaruiz",
-        "password": "administrador",
+        "password": encrypt256("administrador"),
         "email": "alvaro.penaruiz@campus-test.com",
         "admin": true
       }
