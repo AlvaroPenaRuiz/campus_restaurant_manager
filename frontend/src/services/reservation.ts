@@ -16,3 +16,7 @@ export const postReservation = (fullname: string, phone: string, email: string, 
         minute
     })
 }
+
+export const delReservation = (id: number) => {
+    return axios.delete(`${protocol}://${baseRoute}/api/reservation/${id}`)
+}

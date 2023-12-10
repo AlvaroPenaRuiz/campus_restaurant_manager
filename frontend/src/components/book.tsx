@@ -114,7 +114,7 @@ const Book = ({ amountOfDays = 20, amountOfPeople = 12 }: Props) => {
 			})
 			setAvailableTimes(posibleReservationTime)
 			setRestaurants(resRestaurants)
-			setDates(resDates)
+			setDates(resDates.filter((date) => date.workable))
 
 			// Force setting restaurant
 			handleRestaurant({

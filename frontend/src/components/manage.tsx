@@ -13,7 +13,7 @@ import ManageReservations from "./subcomponent/manageReservations"
 import ManageDishes from "./subcomponent/manageDishes"
 
 type Props = {
-	user: UserType,
+	user: UserType
 }
 
 const Manage = ({ user }: Props) => {
@@ -65,13 +65,11 @@ const Manage = ({ user }: Props) => {
 							<Route index element={<Navigate to="details" />} />
 							<Route path="details" element={<ManageRestaurantDetails restaurant={restaurant} setRestaurant={setRestaurant} />} />
 							<Route path="calendar" element={<ManageDailyMenu user={user}/>} />
-							<Route path="reservations" element={<ManageReservations />} />
+							<Route path="reservations" element={<ManageReservations user={user}/>} />
 							<Route path="menu" element={<ManageDishes />} />
 						</Route>
 
 					</Routes>
-					{/* Datos Restaurante */}
-					{/* Calendario comidas pudiendo añadir y quitar platos */}
 					{/* Aceptacion o cancelacion de reservas */}
 					{/* Crear, borrar o modificar platos incluyendo tags */}
 				</div>
