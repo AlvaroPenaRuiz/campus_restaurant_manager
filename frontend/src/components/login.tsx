@@ -17,14 +17,13 @@ const Login = ({ setUser }: Props) => {
 	const checkLogin = async () => {
 		const result = await postUserAuthentication(username, password)
 		const user = result.data
-		if (user) {
+		if (Object.keys(user).length > 0) {
 			setUser(user)
 			Cookies.set("user", JSON.stringify(user))
 			return user
 		} else {
 			setUser(false)
-			const cookie = Cookies.get(user)
-			if (cookie) Cookies.remove(user)
+			Cookies.remove(user)
 			return false
 		}
 	}
@@ -34,8 +33,13 @@ const Login = ({ setUser }: Props) => {
 	const handlePassword = (event: ChangeEvent<HTMLInputElement>) => setPassword(event.currentTarget.value)
 	const handleLogin = (event: React.MouseEvent) => {
 		event.preventDefault()
-		checkLogin()
-		navigate("/")
+		checkLogin().then((response)=>{
+			if (response){
+				navigate("/")
+			} else {
+				window.alert("Login unsuccesful!")
+			}
+		})
 	}
 
 	return (
