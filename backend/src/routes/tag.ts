@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 tagRouter.get("/", (req, res)=>{
     // @ts-ignore
     prisma.foodTypeTag.findMany({
-        include: {dishes: {include: {dish: true}}}
+        include: {dishes: {include: {dish: {include: {restaurant: true}}}}}
     }).then((results)=>{
         res.json(results)
     }).catch((error)=>{

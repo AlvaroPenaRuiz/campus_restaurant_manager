@@ -1,3 +1,4 @@
+import { DishTagType } from "./DishTag"
 import { RestaurantType } from "./Restaurant"
 
 export type DishType = {
@@ -32,5 +33,6 @@ vitamin_d?: number,
 vitamin_e?: number,
 vitamin_k?: number,
 restaurant: RestaurantType,
-restaurant_id: number
+restaurant_id: number,
+tags: DishTagType[]
 }

@@ -2,9 +2,10 @@ import { useEffect, useState } from "react"
 import { getDate } from "../services/date"
 import { DateType } from "../types/Date"
 import DishCard from "./subcomponent/dishCard"
+import { useNavigate } from "react-router-dom"
 
 const TodaysMeal = () => {
-
+  const navigate = useNavigate()
   const [date, setDate] = useState({} as DateType)
 
   useEffect(()=>{
@@ -25,7 +26,7 @@ const TodaysMeal = () => {
         </div>
         <div>
             {date.dishes ? date.dishes.map((dish, index)=>{
-              return <a href={`restaurant/${dish.dish.restaurant.id}`}><DishCard dish={dish.dish} showRestaurant key={index}/></a>
+              return <div onClick={()=>navigate(`/restaurant/${dish.dish.restaurant.id}`)} key={index}><DishCard dish={dish.dish} showRestaurant key={index}/></div>
             }) : <></>}
         </div>
       </>

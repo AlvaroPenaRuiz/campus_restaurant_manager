@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 import express from "express"
+import { encrypt256 } from "../utils/encryption"
 
 export const userRouter = express.Router()
 const prisma = new PrismaClient()
@@ -28,9 +29,12 @@ userRouter.get("/:id", (req, res)=>{
 })
 
 userRouter.post("/", (req, res)=>{
-    const body = req.body
+    const {password, ...body} = req.body
 
-    prisma.user.create({data: body})
+    prisma.user.create({data: {
+        password: encrypt256(password), 
+        ...body
+    }})
     .then((results)=>{
         res.json(results)
     }).catch((error)=>{
@@ -41,6 +45,28 @@ userRouter.post("/", (req, res)=>{
         } else {
             res.send(`There was a problem inserting the user.`)
         }
+    })
+})
+
+userRouter.post("/authenticate", (req, res)=>{
+    const {username} = req.body
+    const password = encrypt256(req.body.password)
+
+    prisma.user.findFirst({
+        where: {
+            username,
+            password
+        }
+    })
+    .then((results)=>{
+        if (results) {
+            const {password, ...data} = results
+            res.json(data)
+        } else {
+            res.json({})
+        }
+    }).catch((error)=>{
+        console.error(error)
     })
 })
 
