@@ -1,4 +1,6 @@
 import { DishType } from "./Dish"
+import { ReservationType } from "./Reservation"
+import { UserType } from "./User"
 
 export type RestaurantType = {
     id: number,
@@ -10,5 +12,6 @@ export type RestaurantType = {
     hour_opening:	number,
     hour_closing:	number,
     dishes: DishType[],
-    users: {}[]
+    users: UserType[],
+    reservations: ReservationType[]
   }

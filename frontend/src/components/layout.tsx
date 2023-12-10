@@ -54,7 +54,7 @@ const Layout = ({user, setUser}: Props) => {
                     <Route path="/book" element={<Book amountOfDays={20} amountOfPeople={12}/>} />
                     <Route path="/food" element={<Food/>} />
                     {!user ? <Route path="/login" element={<Login setUser={setUser}/>} /> : <></>}
-                    {typeof(user) !== "boolean" && user.restaurant_id ? <Route path="/manage" element={<Manage/>} /> : <></>}
+                    {typeof(user) !== "boolean" && user.restaurant_id ? <Route path="/manage/*" element={<Manage user={user}/>} /> : <></>}
                     <Route path="/restaurant/:restaurantId" element={<Restaurant/>} />
                     <Route path="/restaurants" element={<Restaurants/>} />
                     <Route path="/todaysmeal" element={<TodaysMeal/>} />

@@ -10,3 +10,7 @@ export const getRestaurants = () => {
 export const getRestaurant = (restaurantId: number) => {
     return axios.get(`${protocol}://${baseRoute}/api/restaurant/${restaurantId}`)
 }
+
+export const putRestaurant = (restaurantId: number, name: string, location: string, description: string, hour_opening: string, hour_closing: string) => {
+    return axios.put(`${protocol}://${baseRoute}/api/restaurant/${restaurantId}`, {name, location, description, hour_opening: Number(hour_opening), hour_closing: Number(hour_closing)})
+}

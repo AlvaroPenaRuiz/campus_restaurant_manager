@@ -25,7 +25,8 @@ restaurantRouter.get("/:id", (req, res)=>{
         where: {id},
         include:{
             dishes: true,
-            users: true
+            users: true,
+            reservations: true
         }
     }).then((results)=>{
         res.json(results)
