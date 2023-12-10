@@ -29,8 +29,8 @@ userRouter.get("/:id", (req, res)=>{
 })
 
 userRouter.post("/", (req, res)=>{
-    const {password, ...body} = req.body
-
+    const {password, restaurant_id, ...body} = req.body
+    if (restaurant_id) body.restaurant_id = restaurant_id
     prisma.user.create({data: {
         password: encrypt256(password), 
         ...body
@@ -72,8 +72,9 @@ userRouter.post("/authenticate", (req, res)=>{
 
 userRouter.put("/:id", (req, res)=>{
     const id = Number(req.params.id)
-    const body = req.body
-
+    const {password, ...body} = req.body
+    console.log(password)
+    if (password) body.password = encrypt256(password)
     prisma.user.update({
         where: {id},
         data: body
