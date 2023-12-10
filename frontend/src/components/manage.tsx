@@ -66,11 +66,10 @@ const Manage = ({ user }: Props) => {
 							<Route path="details" element={<ManageRestaurantDetails restaurant={restaurant} setRestaurant={setRestaurant} />} />
 							<Route path="calendar" element={<ManageDailyMenu user={user}/>} />
 							<Route path="reservations" element={<ManageReservations user={user}/>} />
-							<Route path="menu" element={<ManageDishes />} />
+							<Route path="menu" element={<ManageDishes user={user}/>} />
 						</Route>
 
 					</Routes>
-					{/* Aceptacion o cancelacion de reservas */}
 					{/* Crear, borrar o modificar platos incluyendo tags */}
 				</div>
 			</div> : <></>}

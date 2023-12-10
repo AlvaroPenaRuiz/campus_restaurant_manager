@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 import { RestaurantType } from "../../types/Restaurant"
 import { putRestaurant } from "../../services/restaurant"
 
