@@ -1,5 +1,6 @@
 import { DishTagType } from "./DishTag"
 import { RestaurantType } from "./Restaurant"
+import { TimetableType } from "./Timetable"
 
 export type DishType = {
 id: number,
@@ -35,4 +36,5 @@ vitamin_k?: number,
 restaurant: RestaurantType,
 restaurant_id: number,
 tags: DishTagType[]
+dates: TimetableType[]
 }

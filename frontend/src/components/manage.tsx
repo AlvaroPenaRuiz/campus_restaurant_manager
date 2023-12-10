@@ -13,10 +13,10 @@ import ManageReservations from "./subcomponent/manageReservations"
 import ManageDishes from "./subcomponent/manageDishes"
 
 type Props = {
-    user: UserType,
+	user: UserType,
 }
 
-const Manage = ({user}: Props) => {
+const Manage = ({ user }: Props) => {
 
 	const navigate = useNavigate()
 
@@ -28,14 +28,16 @@ const Manage = ({user}: Props) => {
 	const fetchData = async () => {
 		const resRestaurant: RestaurantType = (await getRestaurant(user.restaurant_id!)).data
 		const resDates: DateType[] = (await getAmountOfDates(30)).data
-		return { resRestaurant, resDishes: resRestaurant.dishes.sort((a, b) => a.name > b.name ? 1 : -1), resDates, resReservations: resRestaurant.reservations.sort((a, b) => {
-			return new Date(a.date.year, a.date.month, a.date.day) > new Date(b.date.year, b.date.month, b.date.day) ? 1 : -1
-		}) }
+		return {
+			resRestaurant, resDishes: resRestaurant.dishes.sort((a, b) => a.name > b.name ? 1 : -1), resDates, resReservations: resRestaurant.reservations.sort((a, b) => {
+				return new Date(a.date.year, a.date.month, a.date.day) > new Date(b.date.year, b.date.month, b.date.day) ? 1 : -1
+			})
+		}
 	}
 
-	useEffect(()=>{
-		fetchData().then((response)=>{
-			const {resRestaurant, resDishes, resDates, resReservations} = response
+	useEffect(() => {
+		fetchData().then((response) => {
+			const { resRestaurant, resDishes, resDates, resReservations } = response
 
 			setRestaurant(resRestaurant)
 			setDishes(resDishes)
@@ -47,31 +49,33 @@ const Manage = ({user}: Props) => {
 
 	return (
 		<>
-			<div>
-				<h1>Managing Page</h1>
-				<nav>
-					<button onClick={() => navigate('/manage/details')}>Details</button>
-					<button onClick={() => navigate('/manage/calendar')}>Calendar</button>
-					<button onClick={() => navigate('/manage/reservations')}>Reservations</button>
-					<button onClick={() => navigate('/manage/menu')}>Menu</button>
-				</nav>
-			</div>
-			<div>
-				<Routes>
-				<Route path="/" element={<Outlet />}>
-					<Route index element={<Navigate to="details" />} />
-					<Route path="details" element={<ManageRestaurantDetails restaurant={restaurant} setRestaurant={setRestaurant}/>} />
-					<Route path="calendar" element={<ManageDailyMenu/>} />
-					<Route path="reservations" element={<ManageReservations/>} />
-					<Route path="menu" element={<ManageDishes/>} />
-				</Route>
+			{restaurant && dishes && dates && reservations ? <div>
+				<div>
+					<h1>Managing Page</h1>
+					<nav>
+						<button onClick={() => navigate('/manage/details')}>Details</button>
+						<button onClick={() => navigate('/manage/calendar')}>Calendar</button>
+						<button onClick={() => navigate('/manage/reservations')}>Reservations</button>
+						<button onClick={() => navigate('/manage/menu')}>Menu</button>
+					</nav>
+				</div>
+				<div>
+					<Routes>
+						<Route path="/" element={<Outlet />}>
+							<Route index element={<Navigate to="details" />} />
+							<Route path="details" element={<ManageRestaurantDetails restaurant={restaurant} setRestaurant={setRestaurant} />} />
+							<Route path="calendar" element={<ManageDailyMenu user={user}/>} />
+							<Route path="reservations" element={<ManageReservations />} />
+							<Route path="menu" element={<ManageDishes />} />
+						</Route>
 
-				</Routes>
-				{/* Datos Restaurante */}
-				{/* Calendario comidas pudiendo añadir y quitar platos */}
-				{/* Aceptacion o cancelacion de reservas */}
-				{/* Crear, borrar o modificar platos incluyendo tags */}
-			</div>
+					</Routes>
+					{/* Datos Restaurante */}
+					{/* Calendario comidas pudiendo añadir y quitar platos */}
+					{/* Aceptacion o cancelacion de reservas */}
+					{/* Crear, borrar o modificar platos incluyendo tags */}
+				</div>
+			</div> : <></>}
 		</>
 	)
 }

@@ -24,7 +24,10 @@ restaurantRouter.get("/:id", (req, res)=>{
     prisma.restaurant.findUnique({
         where: {id},
         include:{
-            dishes: true,
+            dishes: {include: {
+                tags: {include: {tag: true}},
+                dates: {include: {date: true}}
+            }},
             users: true,
             reservations: true
         }

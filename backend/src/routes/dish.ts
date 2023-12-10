@@ -10,7 +10,8 @@ dishRouter.get("/", (req, res)=>{
     prisma.dish.findMany({
         include:{
             restaurant: true,
-            tags: {include: {tag: true}}
+            tags: {include: {tag: true}},
+            dates: {include: {date: true}}
         }
     }).then((results)=>{
         res.json(results)

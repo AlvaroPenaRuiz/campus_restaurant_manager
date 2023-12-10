@@ -18,10 +18,23 @@ dateRouter.get("/", (req, res)=>{
 
 dateRouter.get("/nextDays/:days", (req, res)=>{
     const amountOfDays = Number(req.params.days)
+    const today = new Date()
     // @ts-ignore
     prisma.date.findMany({
         include:{dishes: {include: {dish: {include: {restaurant: true}}}}},
         take: amountOfDays,
+        where:{ AND: [
+            {
+                year: {gte: today.getFullYear()}
+            },
+            {
+                month: {gte: today.getMonth()+1}
+            },
+            {
+                day: {gte: today.getDate()}
+            }
+        ]
+        },
         orderBy: [
             {year: "asc"},
             {month:"asc"},

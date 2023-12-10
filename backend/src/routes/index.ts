@@ -5,6 +5,7 @@ import dishRouter from "./dish"
 import dateRouter from "./date"
 import reservationRouter from "./reservation"
 import tagRouter from "./tag"
+import timetableRouter from "./timetable"
 
 export const indexRouter = express.Router()
 
@@ -18,5 +19,6 @@ indexRouter.use("/dish", dishRouter)
 indexRouter.use("/date", dateRouter)
 indexRouter.use("/reservation", reservationRouter)
 indexRouter.use("/tag", tagRouter)
+indexRouter.use("/timetable", timetableRouter)
 
 export default indexRouter
