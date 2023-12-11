@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png'
+
 const LandingPage = () => {
 
   return (
@@ -19,6 +21,9 @@ const LandingPage = () => {
             </p>
             <p>This website also provides features for the admin of the application to manage users (managers of the restaurants), you can create users, delete users, modify their data, the restaurant they are binded to and also to provide Admin capabilities.</p>
             <p><em>This website has only academic pourposes, it has been created for as a Project to present at the end of the FP GS Desarrollo de Aplicaciones Web for the institution "CIFP Carlos III, Cartagena, Murcia, España".</em></p>
+
+            <img className='logoLandingPage' src={logo} />
+
           </div>
         </div>
       </div>

@@ -73,7 +73,6 @@ const Manage = ({ user }: Props) => {
 						</Route>
 
 					</Routes>
-					{/* Crear, borrar o modificar platos incluyendo tags */}
 				</div>
 			</div> : <></>}
 		</>

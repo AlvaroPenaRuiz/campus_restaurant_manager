@@ -359,3 +359,9 @@ i{
     margin-top: 3rem;
 }
 
+img.logoLandingPage{
+    width: 40%;
+    margin: auto;
+    display: block;
+    margin-top: 8rem;
+}
