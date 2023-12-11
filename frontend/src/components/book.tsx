@@ -153,7 +153,7 @@ const Book = ({ amountOfDays = 20, amountOfPeople = 12 }: Props) => {
 						</table>
 					</div> :
 						restaurants && dates ? <div>
-							<div>
+							<div className="centeredText">
 								<h1>Booking page</h1>
 								<p>Restaurants can only guarantee your reservation for 30 minutes maximum from the selected time on.</p>
 							</div>

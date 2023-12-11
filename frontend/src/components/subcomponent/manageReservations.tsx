@@ -49,22 +49,23 @@ const ManageReservations = ({user}: Props) => {
 	return (
 		<>
 			{ dates.length > 0 ?
-				<div>
+				<div id="reservationBlock" className="contentBlock centeredText">
 					<div>
-						<h2>Reservation</h2>
+						<h2>Reservations</h2>
 						<p>Here you can see your reservations for an specific day and reject them if needed.</p>
 					</div>
 					<div>
+						<div id="reservationSelect">
 						<select onChange={handleSelectChange}>
 							{dates.map((date, index) => {
 								return <option key={index} value={date.id}>{`${date.day}/${date.month}/${date.year}`}</option>
 							})}
 						</select>
-						
+						</div>
 						{reservationsDate.length > 0 ? <div>
-						<table>
+						<table className="bigTable tableW100">
 							<thead>
-								<tr><th>Fullname</th><th>Email</th><th>Phone</th><th>Amount of People</th><th>Hour</th><th>Minute</th><th>Reject</th></tr>
+								<tr><th>Fullname</th><th>Email</th><th>Phone</th><th>People</th><th>Hour</th><th>Minute</th><th>Reject</th></tr>
 							</thead>
 							<tbody>
 								{reservationsDate.map((reservationDate, index) => {

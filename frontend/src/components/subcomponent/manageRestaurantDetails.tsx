@@ -19,12 +19,13 @@ const ManageRestaurantDetails = ({ restaurant, setRestaurant }: Props) => {
 
 	return (
 		<>
-			{restaurant ? <div>
+			{restaurant ? <div className="subMenuBody">
+				<div className="contentBlock">
 				<h2>{restaurant.name}</h2>
-				<table>
+				<table className="bigtable tableW100 centeredText">
 					<thead>
 						<tr>
-							<th>Name</th><th>location</th><th>Description</th><th>Opening Hour</th><th>Closing Hour</th>
+							<th>Name</th><th>Location</th><th className="descriptionField">Description</th><th>Opening Hour</th><th>Closing Hour</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -45,7 +46,8 @@ const ManageRestaurantDetails = ({ restaurant, setRestaurant }: Props) => {
 						</tr>
 					</tbody>
 				</table>
-				<button onClick={handleSave}>Save</button>
+				<button className="formButton" onClick={handleSave}>Save</button>
+				</div>
 			</div> : <></>}
 		</>
 	)

@@ -61,7 +61,7 @@ const Login = ({ setUser }: Props) => {
 								<input type="password" onChange={handlePassword} />
 							</div>
 						</div>
-						<button onClick={handleLogin}>Login</button>
+						<button className="formButton" onClick={handleLogin}>Login</button>
 					</form>
 				</div>
 			</div>

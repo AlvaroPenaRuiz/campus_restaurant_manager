@@ -7,9 +7,10 @@ import { delDishes, postDish, putDish } from "../../services/food"
 
 type Props = {
 	user: UserType,
+    micronutrients?: boolean
 }
 
-const ManageDishes = ({ user }: Props) => {
+const ManageDishes = ({ user, micronutrients = false }: Props) => {
 
 
     const [dishes, setDishes] = useState([] as DishType[])
@@ -67,11 +68,10 @@ const ManageDishes = ({ user }: Props) => {
                 <div>
                     <h1>Dish Managing Page</h1>
                 </div>
-                <div>
-                    <h2>Dishes:</h2>
+                <div className="centeredText">
                     <table>
                         <thead>
-                            <tr><th>Name</th><th>Description</th><th>Price</th><th>Vegetarian</th><th>Alergies</th><th>Calories</th><th>Carbohydrates</th><th>Sugar</th><th>Fiber</th><th>Fats</th><th>Saturated Fats</th><th>Trans Fats</th><th>Cholesterol</th><th>Proteins</th><th>Sodium</th><th>Iron</th><th>Calcium</th><th>Magnesium</th><th>Potasium</th><th>Phosphorus</th><th>Zinc</th><th>Vitamin A</th><th>Vitamin B</th><th>Vitamin C</th><th>Vitamin D</th><th>Vitamin E</th><th>Vitamin K</th></tr>
+                            <tr><th>Name</th><th>Description</th><th>Price</th><th>Vegetarian</th><th>Alergies</th><th>Calories</th><th>Carbohydrates</th><th>Sugar</th><th>Fiber</th><th>Fats</th><th hidden={!micronutrients}>Saturated Fats</th><th hidden={!micronutrients}>Trans Fats</th><th hidden={!micronutrients}>Cholesterol</th><th>Proteins</th><th hidden={!micronutrients}>Sodium</th><th hidden={!micronutrients}>Iron</th><th hidden={!micronutrients}>Calcium</th><th hidden={!micronutrients}>Magnesium</th><th hidden={!micronutrients}>Potasium</th><th hidden={!micronutrients}>Phosphorus</th><th hidden={!micronutrients}>Zinc</th><th hidden={!micronutrients}>Vitamin A</th><th hidden={!micronutrients}>Vitamin B</th><th hidden={!micronutrients}>Vitamin C</th><th hidden={!micronutrients}>Vitamin D</th><th hidden={!micronutrients}>Vitamin E</th><th hidden={!micronutrients}>Vitamin K</th></tr>
                         </thead>
                         <tbody>
                             {dishes.map((dish, index) => {
@@ -86,26 +86,26 @@ const ManageDishes = ({ user }: Props) => {
                                     <td><input type="number" defaultValue={dish.sugars} /></td>
                                     <td><input type="number" defaultValue={dish.fiber} /></td>
                                     <td><input type="number" defaultValue={dish.fats} /></td>
-                                    <td><input type="number" defaultValue={dish.saturated_fats} /></td>
-                                    <td><input type="number" defaultValue={dish.trans_fats} /></td>
-                                    <td><input type="number" defaultValue={dish.cholesterol} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.saturated_fats} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.trans_fats} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.cholesterol} /></td>
                                     <td><input type="number" defaultValue={dish.proteins} /></td>
-                                    <td><input type="number" defaultValue={dish.sodium} /></td>
-                                    <td><input type="number" defaultValue={dish.iron} /></td>
-                                    <td><input type="number" defaultValue={dish.calcium} /></td>
-                                    <td><input type="number" defaultValue={dish.magnesium} /></td>
-                                    <td><input type="number" defaultValue={dish.potasium} /></td>
-                                    <td><input type="number" defaultValue={dish.phosphorus} /></td>
-                                    <td><input type="number" defaultValue={dish.zinc} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_a} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_b} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_c} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_d} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_e} /></td>
-                                    <td><input type="number" defaultValue={dish.vitamin_k} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.sodium} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.iron} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.calcium} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.magnesium} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.potasium} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.phosphorus} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.zinc} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_a} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_b} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_c} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_d} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_e} /></td>
+                                    <td hidden={!micronutrients}><input type="number" defaultValue={dish.vitamin_k} /></td>
                                     
-                                    <td><button onClick={(event)=>handleSave(event, dish.id)}>Save</button></td>
-                                    <td><button onClick={()=>handleDelete(dish.id)}>Delete</button></td>
+                                    <td><button onClick={(event)=>handleSave(event, dish.id)}><i className="fa-regular fa-floppy-disk"></i></button></td>
+                                    <td><button onClick={()=>handleDelete(dish.id)}><i className="fa-solid fa-trash"></i></button></td>
                                 </tr>
                             })}
                             {newDish ? <tr >
@@ -119,29 +119,29 @@ const ManageDishes = ({ user }: Props) => {
                                     <td><input type="number" /></td>
                                     <td><input type="number" /></td>
                                     <td><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
                                     <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><input type="number" /></td>
-                                    <td><button onClick={handleCreate}>Save</button></td>
-                                    <td><button onClick={()=>setNewDish(false)}>Cancel</button></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td hidden={!micronutrients}><input type="number" /></td>
+                                    <td><button onClick={handleCreate}><i className="fa-regular fa-floppy-disk"></i></button></td>
+                                    <td><button onClick={()=>setNewDish(false)}><i className="fa-solid fa-xmark"></i></button></td>
                                 </tr> : <></>}
                         </tbody>
                     </table>
-                    {!newDish ? <button onClick={()=>setNewDish(true)}>New Dish</button> : <></>}
+                    {!newDish ? <button className="formButton" onClick={()=>setNewDish(true)}>New Dish</button> : <></>}
                 </div>
             </div> : <></>}
         </>

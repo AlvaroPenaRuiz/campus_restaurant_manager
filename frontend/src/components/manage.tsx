@@ -49,24 +49,27 @@ const Manage = ({ user }: Props) => {
 
 	return (
 		<>
-			{restaurant && dishes && dates && reservations ? <div>
+			{restaurant && dishes && dates && reservations ? <div className="subbody">
 				<div>
 					<h1>Managing Page</h1>
-					<nav>
-						<button onClick={() => navigate('/manage/details')}>Details</button>
-						<button onClick={() => navigate('/manage/calendar')}>Calendar</button>
-						<button onClick={() => navigate('/manage/reservations')}>Reservations</button>
-						<button onClick={() => navigate('/manage/menu')}>Menu</button>
-					</nav>
+					<div className="subNav">
+						<nav className="subNav">
+							<button onClick={() => navigate('/manage/details')}>Details</button>
+							<button onClick={() => navigate('/manage/calendar')}>Calendar</button>
+							<button onClick={() => navigate('/manage/reservations')}>Reservations</button>
+							<button onClick={() => navigate('/manage/menu')}>Menu</button>
+
+						</nav>
+					</div>
 				</div>
-				<div>
+				<div className="manageContent">
 					<Routes>
 						<Route path="/" element={<Outlet />}>
 							<Route index element={<Navigate to="details" />} />
 							<Route path="details" element={<ManageRestaurantDetails restaurant={restaurant} setRestaurant={setRestaurant} />} />
-							<Route path="calendar" element={<ManageDailyMenu user={user}/>} />
-							<Route path="reservations" element={<ManageReservations user={user}/>} />
-							<Route path="menu" element={<ManageDishes user={user}/>} />
+							<Route path="calendar" element={<ManageDailyMenu user={user} />} />
+							<Route path="reservations" element={<ManageReservations user={user} />} />
+							<Route path="menu" element={<ManageDishes user={user} />} />
 						</Route>
 
 					</Routes>

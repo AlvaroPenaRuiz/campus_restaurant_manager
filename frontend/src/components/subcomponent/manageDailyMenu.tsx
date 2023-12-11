@@ -11,11 +11,11 @@ type Props = {
 	user: UserType
 }
 
-const ManageDailyMenu = ({user}: Props) => {
+const ManageDailyMenu = ({ user }: Props) => {
 
 	const [dates, setDates] = useState([] as DateType[])
 	const [dishes, setDishes] = useState([] as DishType[])
-	
+
 	const [selectedDay, setSelectedDay] = useState({} as DateType)
 
 	const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -23,14 +23,14 @@ const ManageDailyMenu = ({user}: Props) => {
 		setDishes([...dishes])
 	}
 
-	const handleCheckChange = async (event: React.ChangeEvent<HTMLInputElement>)=>{
+	const handleCheckChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const input = event.currentTarget
-		const {checked} = input
+		const { checked } = input
 		const dishName = (input.parentNode?.previousSibling as HTMLTableElement).innerText
 		const dishId = dishes.find(dish => dish.name === dishName)!.id
 		const newDishes = [...dishes]
 
-		if(checked){
+		if (checked) {
 			const timetable = (await postTimetable(selectedDay.id, dishId)).data
 			newDishes[newDishes.findIndex((dish) => dish.id === dishId)].dates.push(timetable)
 
@@ -68,29 +68,30 @@ const ManageDailyMenu = ({user}: Props) => {
 	return (
 		<>
 			{dishes && dates ?
-				<div>
+				<div className="centeredText W40">
 					<div>
 						<h2>Calendar</h2>
 						<p>Here you can select the dishes for each day.</p>
 					</div>
 					<div>
-						<select onChange={handleSelectChange}>
-							{dates.map((date, index) => {
-								return <option key={index} value={date.id}>{`${date.day}/${date.month}/${date.year}`}</option>
-							})}
-						</select>
-
-						{selectedDay.workable ? 
-						<div>
-							{selectedDay.vegetarian ? <p>This is a Vegetarian Day, you only will be able to serve vegetarian dishes. If you do not have, please, design your menu according to this special condition.</p> : <></>}
-						<table>
-							<tbody>
-								{dishes.map((dish, index) => {
-									return selectedDay.vegetarian && !dish.vegetarian ? <></> : <tr key={index}><td>{dish.name}</td><td><input type="checkbox" checked={dish.dates.filter((timetable) => timetable.date_id == selectedDay.id).length > 0} onChange={handleCheckChange}/></td></tr> 
+						<div className="W40">
+							<select onChange={handleSelectChange}>
+								{dates.map((date, index) => {
+									return <option key={index} value={date.id}>{`${date.day}/${date.month}/${date.year}`}</option>
 								})}
-							</tbody>
-						</table>
-						</div> : <p>This day is not workable.</p>}
+							</select>
+						</div>
+						{selectedDay.workable ?
+							<div>
+								{selectedDay.vegetarian ? <p>This is a Vegetarian Day, you only will be able to serve vegetarian dishes. If you do not have, please, design your menu according to this special condition.</p> : <></>}
+								<table className="calendarTBody">
+									<tbody>
+										{dishes.map((dish, index) => {
+											return selectedDay.vegetarian && !dish.vegetarian ? <></> : <tr key={index}><td>{dish.name}</td><td><input type="checkbox" checked={dish.dates.filter((timetable) => timetable.date_id == selectedDay.id).length > 0} onChange={handleCheckChange} /></td></tr>
+										})}
+									</tbody>
+								</table>
+							</div> : <p>This day is not workable.</p>}
 					</div>
 				</div> : <></>}
 		</>
