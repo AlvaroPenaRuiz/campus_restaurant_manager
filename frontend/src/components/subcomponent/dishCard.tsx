@@ -8,11 +8,13 @@ type Params = {
 const DishCard = ({dish, showRestaurant = false}: Params) => {
 
     return (
-      <div>
+      <div className="card">
+            <div>
             <h3>{dish.name}{showRestaurant ? ` (${dish.restaurant?.name})`: ""}</h3>
             <p><em>{dish.description}</em></p>
             <p><em>{dish.alergies}</em></p>
-            <p><b>{dish.price}</b></p>
+            </div>
+            <p className="foodCardPrice"><b>{dish.price} €</b></p>
       </div>
     )
   }

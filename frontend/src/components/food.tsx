@@ -56,12 +56,12 @@ const Food = () => {
 
 	return (
 		<>
-			{food && tags && taggedFood ? <div>
+			{food && tags && taggedFood ? <div className='subbody'>
 				<div>
 					<h1>Food Page</h1>
 				</div>
-				<div>
-					<div>
+				<div className='contentBlock'>
+					<div id='foodMultiselectContainer'>
 						<Multiselect
 							className='foodTagsMultiSelect'
 							options={tagsOptions} // Options to display in the dropdown
@@ -74,9 +74,9 @@ const Food = () => {
 							showArrow={true} // Shows an arrow at the end of the box
 						/>
 					</div>
-					<div>
+					<div className='cardContainer'>
 						{ taggedFood.map((dish, index) => {
-							return <div onClick={() => navigate(`/restaurant/${dish.restaurant.id}`)} key={index}><DishCard dish={dish} showRestaurant key={index} /></div>
+							return <div id='foodCardWrapper' onClick={() => navigate(`/restaurant/${dish.restaurant.id}`)} key={index}><DishCard dish={dish} showRestaurant key={index} /></div>
 						})}
 					</div>
 				</div>
