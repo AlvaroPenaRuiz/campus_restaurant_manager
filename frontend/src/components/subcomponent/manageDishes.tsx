@@ -69,7 +69,7 @@ const ManageDishes = ({ user, micronutrients = false }: Props) => {
                     <h1>Dish Managing Page</h1>
                 </div>
                 <div className="centeredText">
-                    <table>
+                    <table className="tableW100">
                         <thead>
                             <tr><th>Name</th><th>Description</th><th>Price</th><th>Vegetarian</th><th>Alergies</th><th>Calories</th><th>Carbohydrates</th><th>Sugar</th><th>Fiber</th><th>Fats</th><th hidden={!micronutrients}>Saturated Fats</th><th hidden={!micronutrients}>Trans Fats</th><th hidden={!micronutrients}>Cholesterol</th><th>Proteins</th><th hidden={!micronutrients}>Sodium</th><th hidden={!micronutrients}>Iron</th><th hidden={!micronutrients}>Calcium</th><th hidden={!micronutrients}>Magnesium</th><th hidden={!micronutrients}>Potasium</th><th hidden={!micronutrients}>Phosphorus</th><th hidden={!micronutrients}>Zinc</th><th hidden={!micronutrients}>Vitamin A</th><th hidden={!micronutrients}>Vitamin B</th><th hidden={!micronutrients}>Vitamin C</th><th hidden={!micronutrients}>Vitamin D</th><th hidden={!micronutrients}>Vitamin E</th><th hidden={!micronutrients}>Vitamin K</th></tr>
                         </thead>
