@@ -31,7 +31,7 @@ const TodaysMeal = () => {
         <div className="contentBlock">
           <div className="cardContainer">
             {date.dishes ? date.dishes.map((dish, index) => {
-              return <div onClick={() => navigate(`/restaurant/${dish.dish.restaurant.id}`)} key={index}><DishCard dish={dish.dish} showRestaurant key={index} /></div>
+              return <div id='foodCardWrapper' onClick={() => navigate(`/restaurant/${dish.dish.restaurant.id}`)} key={index}><DishCard dish={dish.dish} showRestaurant key={index} /></div>
             }) : <></>}
           </div>
         </div>

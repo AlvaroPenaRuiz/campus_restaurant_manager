@@ -2,13 +2,13 @@
     font-family: mainFont;
     src: url(assets/Prompt-Regular.ttf);
     font-weight: bolder;
-  }
+}
 
 html {
     height: 100%;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: mainFont;
@@ -19,22 +19,22 @@ body{
     color: #e8e6e3;
 }
 
-.subbody{
+.subbody {
     margin-top: 8rem;
     margin-bottom: 8rem;
 }
 
-.centeredText{
+.centeredText {
     text-align: center;
 }
 
 div#root {
     display: grid;
     height: 100%;
-    grid-template-rows:  1fr 7rem;
+    grid-template-rows: 1fr 7rem;
 }
 
-nav{
+nav {
     z-index: 100;
     background-color: #422532;
     position: fixed;
@@ -45,46 +45,48 @@ nav{
     grid-template-columns: 6fr 1fr 6fr;
 }
 
-.navLogo{
+.navLogo {
     height: 6rem;
     width: auto;
     margin: auto;
     vertical-align: middle;
 }
 
-.navLogo:hover{
+.navLogo:hover {
     height: 7rem
 }
 
-.mainNavLeft, .mainNavCenter, .mainNavRight{
+.mainNavLeft,
+.mainNavCenter,
+.mainNavRight {
     display: grid;
 }
 
-.mainNavLeft{
+.mainNavLeft {
     grid-template-columns: repeat(5, 1fr) 1fr;
 }
 
-.mainNavRight{
-    justify-content: end; 
+.mainNavRight {
+    justify-content: end;
 }
 
-.mainNavButton{
+.mainNavButton {
     background-color: transparent;
     border: 0px;
     min-width: 8rem;
     font-family: mainFont;
     font-size: larger;
     color: #e8e6e3;
-    
+
 }
 
-.mainNavButton:hover{
+.mainNavButton:hover {
     color: antiquewhite;
     font-size: x-large;
     box-shadow: 0 0 0 transparent;
 }
 
-footer{
+footer {
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -92,31 +94,32 @@ footer{
     height: 4rem;
 
 }
+
 footer p {
-    margin: 1.5rem  ;
+    margin: 1.5rem;
 }
 
 
-h1{
+h1 {
     margin-top: 3rem;
     text-align: center;
 }
 
-button{
+button {
     width: 100%;
     height: 100%;
     color: #e8e6e3;
     background-color: #642d45;
     border-radius: 5px;
     font-family: mainFont;
-    font-size: large;    
+    font-size: large;
 }
 
-button:hover{
+button:hover {
     box-shadow: 2px 2px 5px rgba(128, 0, 128, 0.556);
 }
 
-button.backButton{
+button.backButton {
     max-width: 6rem;
     height: 2.5rem;
     position: fixed;
@@ -124,18 +127,19 @@ button.backButton{
     right: 4rem;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 .invalid {
     border: solid red 1px;
 }
+
 input:focus {
     outline: none;
 }
 
-.contentLandingPage{
+.contentLandingPage {
     margin: auto;
     margin-top: 6rem;
     width: 60%;
@@ -143,7 +147,7 @@ input:focus {
 
 }
 
-.contentBlock{
+.contentBlock {
     margin: auto;
     margin-top: 3rem;
     width: 60%;
@@ -163,9 +167,11 @@ input:focus {
     padding: 2rem;
     border-radius: 2rem;
     text-align: center;
+}
+
+.cardFood{
     display: grid;
     grid-template-rows: 1fr 2rem;
-
 }
 
 .card:hover {
@@ -173,7 +179,7 @@ input:focus {
 
 }
 
-#foodCardWrapper{
+#foodCardWrapper {
     display: grid;
     height: 100%;
 }
@@ -185,9 +191,105 @@ input:focus {
     gap: 0.5rem;
 }
 
-.optionListContainer{
+
+.optionListContainer {
     background-color: rgb(36, 26, 26)
 }
+
 .chip {
     background-color: #422532;
 }
+
+label {
+    display: block;
+}
+
+form {
+    box-shadow: 1px 1px 6rem rgba(101, 0, 101, 0.444);
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    border-radius: 6rem;
+}
+
+.formGroup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: dotted 0.15rem #642d45;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+
+.formItem {}
+
+input,
+select {
+    font-size: large;
+    width: 95%;
+}
+
+.formButton {
+    max-width: 8rem;
+    height: 3rem;
+    margin: auto;
+    margin-top: 2rem;
+    display: block;
+}
+
+div.formDone {
+    box-shadow: 1px 1px 6rem rgba(101, 0, 101, 0.444);
+    margin-top: 12rem;
+    padding-top: 0.1rem;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    border-radius: 6rem;
+
+}
+
+table.formDone {
+    margin: auto;
+
+}
+
+.formDone tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: justify;
+}
+
+
+form#loginForm {
+    margin-top: 6rem;
+}
+
+#loginForm {
+    grid-template-columns: repeat(2, 1fr);
+    border: 0px;
+    text-align: center;
+}
+
+#loginForm input {
+    width: 80%
+}
+
+.tableContainer{
+    width: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.bigTable{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-spacing: 1rem 0.2rem;
+}
+
+i{
+    padding: 0.2rem;
+}
+

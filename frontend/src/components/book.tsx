@@ -139,70 +139,75 @@ const Book = ({ amountOfDays = 20, amountOfPeople = 12 }: Props) => {
 	}, [restaurant])
 
 	return (
-		<> {done ? <div>
-			<h1>Thank you for your reservation!</h1>
-			<p>{`You have a table for ${people} ${people === 1 ? "person" : "people"} at `}<b>{restaurants.find(res => res.id === restaurant)?.name}</b>{` the day "${dateToString(dates.find(day => day.id === date)!)}" at ${time}.`}</p>
-			<p>If the staff members need to contact you they will do it with the provided information:</p>
-				<table>
-					<tr><td>"Fullname</td><td>{fullname}</td></tr>
-					<tr><td>"Email</td><td>{email}</td></tr>
-					<tr><td>"Phone Address</td><td>{phone}</td></tr>
-				</table>
-		</div> :
-			restaurants && dates ? <div>
-				<div>
-					<h1>Booking page</h1>
-					<p>Restaurants can only guarantee your reservation for 30 minutes maximum from the selected time on.</p>
+		<>
+			<div className="subbody">
+				<div className="contentBlock">
+					{done ? <div className="formDone centeredText">
+						<h1>Thank you for your reservation!</h1>
+						<p>{`You have a table for ${people} ${people === 1 ? "person" : "people"} at `}<b>{restaurants.find(res => res.id === restaurant)?.name}</b>{` the day "${dateToString(dates.find(day => day.id === date)!)}" at ${time}.`}</p>
+						<p>If the staff members need to contact you they will do it with the provided information:</p>
+						<table className="formDone">
+							<tr><td>"Fullname</td><td>{fullname}</td></tr>
+							<tr><td>"Email</td><td>{email}</td></tr>
+							<tr><td>"Phone Address</td><td>{phone}</td></tr>
+						</table>
+					</div> :
+						restaurants && dates ? <div>
+							<div>
+								<h1>Booking page</h1>
+								<p>Restaurants can only guarantee your reservation for 30 minutes maximum from the selected time on.</p>
+							</div>
+							<div>
+								<form>
+									<h2>Contact Information</h2>
+									<div className="formGroup">
+										<div className="formItem">
+											<label>Fullname</label>
+											<input type="text" name="fullname" placeholder="Firstname Lastname" onChange={handleFullname} />
+										</div>
+										<div className="formItem">
+											<label>Email</label>
+											<input type="email" name="email" placeholder="your-email-address@domain.com" onChange={handleEmail} />
+										</div>
+										<div className="formItem">
+											<label>Phone Number</label>
+											<input type="tel" name="phone" placeholder="+Ext XXX XXX XXX" onChange={handlePhone} />
+										</div>
+									</div>
+									<div className="formGroup">
+										<div className="formItem">
+											<label>Restaurant</label>
+											<select name="restaurant" onChange={handleRestaurant}>
+												{restaurants.map((restaurant, index) => <option key={index} value={restaurant.id}>{restaurant.name}</option>)}
+											</select>
+										</div>
+										<div className="formItem">
+											<label>Amount of People</label>
+											<select name="people" onChange={handlePeople}>
+												{amountOfPeopleOptions.map((quantity, index) => <option key={index} value={quantity}>{quantity}</option>)}
+											</select>
+										</div>
+									</div>
+									<div className="formGroup">
+										<div className="formItem">
+											<label>Date</label>
+											<select name="date" onChange={handleDate}>
+												{dates.map((date, index) => <option key={index} value={date.id}>{`${date.day}/${date.month}/${date.year}`}</option>)}
+											</select>
+										</div>
+										<div className="formItem">
+											<label>Time</label>
+											<select name="time" onChange={handleTime}>
+												{selectableTimes.map((time, index) => <option key={index} value={time}>{time}</option>)}
+											</select>
+										</div>
+									</div>
+									<button className="formButton" onClick={handleForm}>Book</button>
+								</form>
+							</div>
+						</div> : <></>}
 				</div>
-				<div>
-					<form>
-						<h2>Contact Information</h2>
-						<div>
-							<div>
-								<label>Fullname</label>
-								<input type="text" name="fullname" placeholder="Firstname Lastname" onChange={handleFullname} />
-							</div>
-							<div>
-								<label>Email</label>
-								<input type="email" name="email" placeholder="your-email-address@domain.com" onChange={handleEmail} />
-							</div>
-							<div>
-								<label>Phone Number</label>
-								<input type="tel" name="phone" placeholder="+Ext XXX XXX XXX" onChange={handlePhone} />
-							</div>
-						</div>
-						<div>
-							<div>
-								<label>Restaurant</label>
-								<select name="restaurant" onChange={handleRestaurant}>
-									{restaurants.map((restaurant, index) => <option key={index} value={restaurant.id}>{restaurant.name}</option>)}
-								</select>
-							</div>
-							<div>
-								<label>Amount of People</label>
-								<select name="people" onChange={handlePeople}>
-									{amountOfPeopleOptions.map((quantity, index) => <option key={index} value={quantity}>{quantity}</option>)}
-								</select>
-							</div>
-						</div>
-						<div>
-							<div>
-								<label>Date</label>
-								<select name="date" onChange={handleDate}>
-									{dates.map((date, index) => <option key={index} value={date.id}>{`${date.day}/${date.month}/${date.year}`}</option>)}
-								</select>
-							</div>
-							<div>
-								<label>Time</label>
-								<select name="time" onChange={handleTime}>
-									{selectableTimes.map((time, index) => <option key={index} value={time}>{time}</option>)}
-								</select>
-							</div>
-						</div>
-						<button onClick={handleForm}>Book</button>
-					</form>
-				</div>
-			</div> : <></>}
+			</div>
 		</>
 	)
 }
