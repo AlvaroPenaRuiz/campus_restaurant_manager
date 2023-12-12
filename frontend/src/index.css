@@ -104,7 +104,7 @@ footer {
     width: 100%;
     bottom: 0;
     background-color: #422532;
-    height: 4rem;
+    height: 6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -378,4 +378,12 @@ img.logoLandingPage{
 
 .license{
     text-align: right;
+}
+
+.license a {
+    color: rgb(171, 81, 144);
+}
+
+.license a:hover {
+    text-shadow: 1px 1px 12px rgb(167, 98, 141);
 }
