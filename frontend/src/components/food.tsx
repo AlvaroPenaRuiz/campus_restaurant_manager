@@ -32,6 +32,20 @@ const Food = () => {
 		return { resFood: resFood.sort((a, b) => a.name > b.name ? 1 : -1), resTag }
 	}
 
+	const filterByMultipleTags = (tags: TagType[]) : DishType[] =>{
+		if (tags.length !== 0){
+			if (tags.length === 1) {
+				const tag = tags[0]
+				return food.filter((dish: DishType) => dish.tags.map(tag => tag.tag_id).includes(tag.id))
+			}else {
+				const tag = tags.pop()
+				return filterByMultipleTags(tags).filter((dish: DishType) => dish.tags.map(tag => tag.tag_id).includes(tag!.id))
+			}
+		} else {
+			return []
+		}
+	}
+
 	useEffect(() => {
 		fetchData().then((response) => {
 			const { resFood, resTag } = response
@@ -46,12 +60,14 @@ const Food = () => {
 	}, [])
 
 	useEffect(() => {
-		const matches = selectedTags.map(tag => tag.dishes.map(dish => dish.dish))
-		let distinct = matches.flatMap(tag=>tag)
-		matches.forEach(tag =>{
-			distinct = distinct.filter(dish1 => tag.filter(dish2 => dish1.id === dish2.id).length > 0)
-		})
-		setTaggedFood(distinct)
+		if(selectedTags.length !== 0){
+			const distinct = filterByMultipleTags(selectedTags)
+
+			setTaggedFood(distinct)
+		} else {
+			setTaggedFood(food)
+		}
+
 	}, [selectedTags])
 
 	return (
