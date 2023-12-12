@@ -10,4 +10,4 @@ COPY ./prisma/ ./prisma/
 
 RUN yarn install
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "prod"]

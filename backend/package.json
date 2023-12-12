@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon --legacy-watch src/index.ts -e ts",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
-    "prisma:migrate": "prisma migrate dev --name init --schema=./prisma/schema.prisma",
+    "prod": "prisma generate --schema=./prisma/schema.prisma && prisma migrate deploy && ts-node prisma/seed.ts && nodemon src/index.ts",
+    "prisma:migrateDev": "prisma migrate dev --name init --schema=./prisma/schema.prisma",
     "prisma:seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
