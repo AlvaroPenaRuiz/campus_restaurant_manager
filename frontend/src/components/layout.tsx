@@ -11,8 +11,7 @@ import Login from "./login"
 import { UserType } from "../types/User"
 import Cookies from "js-cookie"
 import logo from '../assets/logo.png'
-import ccLogo from '../assets/cclogo.jpeg'
-import CCPage from "./ccPage"
+import License from "./subcomponent/license"
 
 type Props = {
     user: UserType | boolean,
@@ -61,7 +60,6 @@ const Layout = ({ user, setUser }: Props) => {
                     <Route path="/restaurant/:restaurantId" element={<Restaurant />} />
                     <Route path="/restaurants" element={<Restaurants />} />
                     <Route path="/todaysmeal" element={<TodaysMeal />} />
-                    <Route path="/cc" element={<CCPage />} />
                     <Route path="/" element={<LandingPage />} />
                     <Route path="*" element={<Navigate to={"/"} />} />
                 </Routes>
@@ -69,8 +67,7 @@ const Layout = ({ user, setUser }: Props) => {
             </div>
 
             <footer>
-                <p>This is a Project for FP GS Desarrollo de Aplicaciones Web made by Álvaro Pena Ruiz for CIFP Carlos III.</p> <div><img id="ccLogo" src={ccLogo} onClick={() => navigate('/cc')}/></div>
-
+                <div><p>This is a Project for FP GS Desarrollo de Aplicaciones Web made by Álvaro Pena Ruiz for CIFP Carlos III. </p></div><div className="license"><License/></div>
             </footer>
         </>
     )

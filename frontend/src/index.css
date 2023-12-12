@@ -106,7 +106,7 @@ footer {
     background-color: #422532;
     height: 4rem;
     display: grid;
-    grid-template-columns: 1fr 5rem 2rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 footer p {
@@ -376,15 +376,6 @@ img.logoLandingPage{
     margin-top: 8rem;
 }
 
-#ccLogo{
-    
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border-radius: 0.6rem;
-}
-
-#ccLogo:hover{
-    box-shadow: 1px 1px 10px #e8e6e3;
+.license{
+    text-align: right;
 }
