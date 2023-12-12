@@ -4,10 +4,15 @@ services:
   backend:
     build:
       context: backend
+    command: yarn dev
     restart: always
     ports:
       - 3000:3000
-
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/prisma:/app/prisma
+      - ./backend/package.json:/app/package.json
+      - ./backend/yarn.lock:/app/yarn.lock
     environment:
       - DATABASE_URL=postgresql://admin:testing@db:5432/campus_restaurant_db
       - ENVIRONMENT=development
@@ -21,7 +26,12 @@ services:
     restart: always
     ports:
       - 80:6116
-
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/package.json:/app/package.json
+      - ./frontend/yarn.lock:/app/yarn.lock
+      - ./frontend/index.html:/app/index.html
+      - ./frontend/vite.config.ts:/app/vite.config.ts
 
   db:
     image: postgres
@@ -30,6 +40,8 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=testing
       - POSTGRES_DB=campus_restaurant_db
+    volumes:
+      - ./data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U admin -d campus_restaurant_db"]
       interval: 10s

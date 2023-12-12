@@ -1,5 +1,6 @@
 import { PrismaClient, FoodTypeTag } from "@prisma/client";
 import data from "./data";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 
 const prisma = new PrismaClient()
 
@@ -137,8 +138,13 @@ main()
     .then(async () => {
         await prisma.$disconnect()
     })
-    .catch(async (error) => {
-        console.error(error)
-        await prisma.$disconnect()
-        process.exit(1)
+    .catch(async (error: PrismaClientKnownRequestError) => {
+        if (error.code === 'P2002'){
+            console.log("The database has already been seeded. There is no need to do it again.")
+            await prisma.$disconnect()
+        } else {
+            console.error(error)
+            await prisma.$disconnect()
+            process.exit(1)
+        }
     })
